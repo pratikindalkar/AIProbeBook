@@ -1,0 +1,186 @@
+﻿@{
+    ViewData["Title"] = "Prompt View";
+}
+<style>
+    /* Container for each Label + Dropdown row */
+    .form-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        gap: 45px;
+        flex-wrap: wrap;
+    }
+
+    .custom-label {
+        min-width: 120px;
+        font-weight: bold;
+        white-space: nowrap;
+        color: #444;
+    }
+
+    .custom-select, .custom-txt {
+        flex: 1;
+        max-width: 250px;
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 0.95rem;
+        outline: none;
+        transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+        .custom-select:focus, .custom-txt:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+        }
+
+    .textarea-row {
+        align-items: flex-start;
+    }
+
+        .textarea-row .custom-label {
+            padding-top: 8px;
+        }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        margin-top: 30px;
+    }
+
+    .custom-btn {
+        background-color: #8728E1;
+        color: white;
+        /* min-width: 100px;  */
+        padding: 8px 30px;
+        border-radius: 8px;
+    }
+</style>
+
+<div class="form-container">
+    <div class="form-row">
+        <label class="custom-label">Select Model</label>
+        <select name="SelectedModel" class="custom-select">
+            <option value="">-- Select Model --</option>
+            @{
+                var ModelList = ViewBag.ModelList as List<AILogBook.Models.AIModel>;
+                if (ModelList != null)
+                {
+                    for (int i = 0; i < ModelList.Count; i++)
+                    {
+                        <option value="@ModelList[i].AIName">@ModelList[i].AIName</option>
+                    }
+                }
+            }
+        </select>
+
+        <label class="custom-label">Select API URL</label>
+        <select name="SelectedApiUrl" class="custom-select">
+            <option value="">-- Select API URL --</option>
+            @{
+                var ApiurlList = ViewBag.ModelList as List<AILogBook.Models.AIModel>;
+                if (ApiurlList != null)
+                {
+                    for (int i = 0; i < ApiurlList.Count; i++)
+                    {
+                        <option value="@ApiurlList[i].APIUrl1">@ApiurlList[i].APIUrl1</option>
+                    }
+                }
+            }
+        </select>
+    </div>
+    <div class="form-row">
+        <label class="custom-label">Select Category</label>
+        <select name="SelectedCategory" class="custom-select">
+            <option value="">-- Select Category --</option>
+            @{
+                var CateList = ViewBag.CateList as List<AILogBook.Models.Categories>;
+                if (CateList != null)
+                {
+                    for (int i = 0; i < CateList.Count; i++)
+                    {
+                        <option value="@CateList[i].CategoryName">@CateList[i].CategoryName</option>
+                    }
+                }
+            }
+        </select>
+    </div>
+
+    <div class="form-row">
+        <label class="custom-label">Select Topic</label>
+        <select name="SelectedTopic" class="custom-select">
+            <option value="">-- Select Topics --</option>
+            @{
+                var TopicList = ViewBag.TopicList as List<AILogBook.Models.Topics>;
+                if (TopicList != null)
+                {
+                    for (int i = 0; i < TopicList.Count; i++)
+                    {
+                        <option value="@TopicList[i].Topic">@TopicList[i].Topic</option>
+                    }
+                }
+            }
+        </select>
+    </div>
+
+    <div class="form-row">
+        <label class="custom-label">Select Attribute</label>
+        <select name="SelectedAttribute" class="custom-select">
+            <option value="">-- Select Attribute --</option>
+            @{
+                var AttriList = ViewBag.AttrList as List<AILogBook.Models.Attributes>;
+                if (AttriList != null)
+                {
+                    for (int i = 0; i < AttriList.Count; i++)
+                    {
+                        <option value="@AttriList[i].Attribute">@AttriList[i].Attribute</option>
+                    }
+                }
+            }
+        </select>
+    </div>
+    <div class="form-row textarea-row">
+        <label class="custom-label">Initial Prompt</label>
+        <textarea id="txtinitial" class="custom-txt"></textarea>
+
+
+        <label class="custom-label">Min Prompt</label>
+        <select name="SelectedminPrompt" class="custom-select">
+            <option value="">-- Select Min Prompt --</option>
+            <option value="">1</option>
+            <option value="">2</option>
+            <option value="">3</option>
+            <option value="">4</option>
+            <option value="">5</option>
+            <option value="">6</option>
+            <option value="">7</option>
+            <option value="">8</option>
+            <option value="">9</option>
+            <option value="">10</option>
+        </select>
+    </div>
+    <div class="form-row textarea-row">
+        <label class="custom-label">End Prompt</label>
+        <textarea id="txtend" class="custom-txt"></textarea>
+
+        <label class="custom-label">Max Prompt</label>
+        <select name="SelectedmaxPrompt" class="custom-select">
+            <option value="">-- Select Max Prompt --</option>
+            <option value="">1</option>
+            <option value="">2</option>
+            <option value="">3</option>
+            <option value="">4</option>
+            <option value="">5</option>
+            <option value="">6</option>
+            <option value="">7</option>
+            <option value="">8</option>
+            <option value="">9</option>
+            <option value="">10</option>
+        </select>
+    </div>
+    <div class="button-container">
+        <button type="submit" formmethod="get" class="custom-btn">Send</button>
+    </div>
+</div>

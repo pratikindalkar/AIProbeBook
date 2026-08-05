@@ -1,0 +1,16 @@
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Release\net8.0\PubTmp\Out\AILogBook.exe
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Release\net8.0\PubTmp\Out\appsettings.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Release\net8.0\PubTmp\Out\AILogBook.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Release\net8.0\PubTmp\Out\AILogBook.deps.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Release\net8.0\PubTmp\Out\AILogBook.runtimeconfig.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Release\net8.0\PubTmp\Out\AILogBook.pdb
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Release\net8.0\PubTmp\Out\ClosedXML.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Release\net8.0\PubTmp\Out\ClosedXML.Parser.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Release\net8.0\PubTmp\Out\DocumentFormat.OpenXml.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Release\net8.0\PubTmp\Out\DocumentFormat.OpenXml.Framework.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Release\net8.0\PubTmp\Out\ExcelNumberFormat.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Release\net8.0\PubTmp\Out\Newtonsoft.Json.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Release\net8.0\PubTmp\Out\RBush.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Release\net8.0\PubTmp\Out\SixLabors.Fonts.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Release\net8.0\PubTmp\Out\System.IO.Packaging.dll

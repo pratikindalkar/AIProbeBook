@@ -1,0 +1,51 @@
+﻿@model ErrorViewModel
+@{
+    Layout = null;
+    ViewData["Title"] = "Project Access Denied";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Access Denied</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <style>
+        .error-container {
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        .error-card {
+            border: 1px solid #dc3545;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container error-container">
+        <div class="error-card bg-white">
+            <h1 class="text-danger">Access Restricted</h1>
+            <hr />
+
+            <p class="lead">
+                <strong>The project is not valid because:</strong>
+            </p>
+
+            <ul class="list-unstyled">
+               <li><strong>Project Status:</strong> The project is currently marked as <em>Inactive</em>.</li>
+                        <li><strong>Authentication:</strong> The <em>Project Key</em> provided is invalid or incorrect.</li>
+                        <li><strong>Expiration:</strong> The project <em>Date Range</em> has expired.</li>
+            </ul>
+
+            <div class="mt-4">
+                <p>Please contact your administrator to create or reactivate the project in the <strong>APB_ProjectDetails</strong> module.</p>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
+

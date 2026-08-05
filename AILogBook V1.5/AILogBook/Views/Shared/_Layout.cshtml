@@ -1,0 +1,339 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    Context.Response.Headers["Cache-Control"] = "no-cache, no-store, must-revalidate";
+    Context.Response.Headers["Pragma"] = "no-cache";
+    Context.Response.Headers["Expires"] = "-1";
+
+    var currentController = ViewContext.RouteData.Values["Controller"]?.ToString();
+    var currentAction = ViewContext.RouteData.Values["Action"]?.ToString();
+
+    // Logic: If we are in the 'Attribute' controller, keep that section open
+    bool attrOpen = (currentController == "Attribute");
+    bool mainOpen = (currentController == "Main");
+    bool aiOpen = (currentController == "AIModel");
+    bool catOpen = (currentController == "Category");
+    bool topicOpen = (currentController == "Topic");
+    bool ProjectOpen = (currentController == "APBProject");
+    bool UserLog = (currentController == "UserLog" || currentController == "AccessControl");
+    bool chatSettingOpen = (currentController == "ChatTheme");
+}
+
+@{
+    var sessionName = HttpContextAccessor.HttpContext.Session.GetString("UserName") ?? "Guest";
+    var firstLetter = sessionName.Substring(0, 1).ToUpper();
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AIProbeBook</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @* Added Bootstrap Icons Link *@
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/AILogBook.styles.css" asp-append-version="true" />
+
+    <style>
+        /* This fixes the "media name does not exist" error you had */
+        @@media (max-width: 767.98px) {
+            #sidebarMenu {
+                position: relative;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    @if (currentController == "Login")
+    {
+        <div class="container">
+            @RenderBody()
+        </div>
+    }
+    else
+    {
+
+        <div class="container-fluid">
+            <div class="row">
+                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block border-end sidebar collapse" style="background-color: #8728E1; min-height: 100vh;">
+                    <div class="position-sticky pt-3">
+                        @* Logo Section *@
+                        <div class="text-center px-3 mb-4">
+                            <img src="~/images/VKS.png" alt="VKS Logo" style="height: 45px; width: 45px; object-fit: contain;" class="mb-1" />
+                            <p class="fs-5 fw-bold text-white mb-0 d-block" style="letter-spacing: 1px;">AI Probe Book</p>
+                        </div>
+                        <ul class="nav flex-column px-2">
+                            @* --- MAIN SECTION --- *@
+                            <li class="nav-item mb-2">
+                                <a class="nav-link text-white rounded d-flex justify-content-between align-items-center p-2"
+                                   style="background: @(mainOpen ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.1)");"
+                                   asp-controller="Main" asp-action="Main">
+                                    <span><i class="bi bi-speedometer2 me-2"></i> Prompt List</span>
+                                    <i class="bi @(mainOpen ? "bi-chevron-up" : "bi-chevron-down") small opacity-75"></i>
+                                </a>
+                                <div class="collapse @(mainOpen ? "show" : "")" id="mainSubmenu">
+                                    <ul class="nav flex-column ms-3 mt-1 border-start border-white-50">
+                                        @* <li class="nav-item">
+                                            <a class="nav-link @(currentAction == "Main" && mainOpen ? "text-white fw-bold" : "text-white-50") py-1 ps-3"
+                                               asp-controller="Main" asp-action="Main">PromptList</a>
+                                        </li> *@
+                                        <li class="nav-item">
+                                            <a class="nav-link @(currentAction == "PromptView" ? "text-white fw-bold" : "text-white-50") py-1 ps-3"
+                                               asp-controller="Main" asp-action="PromptView">New Prompt </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            @* --- AI MODEL SECTION --- *@
+                            <li class="nav-item mb-2">
+                                <a class="nav-link text-white rounded d-flex justify-content-between align-items-center p-2"
+                                   style="background: @(aiOpen ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.1)");"
+                                   asp-controller="AIModel" asp-action="AIModel">
+                                    <span><i class="bi bi-robot me-2"></i> AI Model</span>
+                                    <i class="bi @(aiOpen ? "bi-chevron-up" : "bi-chevron-down") small opacity-75"></i>
+                                </a>
+                                <div class="collapse @(aiOpen ? "show" : "")">
+                                    <ul class="nav flex-column ms-3 mt-1 border-start border-white-50">
+                                        <li class="nav-item">
+                                            <a class="nav-link @(currentAction == "AddAIModel" ? "text-white fw-bold" : "text-white-50") py-1 ps-3 text-nowrap"
+                                               asp-controller="AIModel" asp-action="AddAIModel">
+                                                <i class="bi bi-plus-circle-dotted me-1"></i> Define Model
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            @* --- CATEGORIES SECTION --- *@
+                            <li class="nav-item mb-2">
+                                <a class="nav-link text-white rounded d-flex justify-content-between align-items-center p-2"
+                                   style="background: @(catOpen ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.1)");"
+                                   asp-controller="Category" asp-action="Index">
+                                    <span><i class="bi bi-tags me-2"></i> Categories</span>
+                                    <i class="bi @(catOpen ? "bi-chevron-up" : "bi-chevron-down") small opacity-75"></i>
+                                </a>
+                                <div class="collapse @(catOpen ? "show" : "")">
+                                    <ul class="nav flex-column ms-3 mt-1 border-start border-white-50">
+                                        <li class="nav-item">
+                                            <a class="nav-link @(currentAction == "AddCategory" ? "text-white fw-bold" : "text-white-50") py-1 ps-3 text-nowrap"
+                                               asp-controller="Category" asp-action="AddCategory">
+                                                <i class="bi bi-plus-circle-dotted me-1"></i> Define Category
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            @* --- ATTRIBUTE SECTION --- *@
+                            <li class="nav-item mb-2">
+                                <a class="nav-link text-white rounded d-flex justify-content-between align-items-center p-2"
+                                   style="background: @(attrOpen ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.1)");"
+                                   asp-controller="Attribute" asp-action="Attribute">
+                                    <span><i class="bi bi-list-columns-reverse me-2"></i> Attribute</span>
+                                    <i class="bi @(attrOpen ? "bi-chevron-up" : "bi-chevron-down") small opacity-75"></i>
+                                </a>
+                                <div class="collapse @(attrOpen ? "show" : "")">
+                                    <ul class="nav flex-column ms-3 mt-1 border-start border-white-50">
+                                        <li class="nav-item">
+                                            <a class="nav-link @(currentAction == "AddAttributes" ? "text-white fw-bold" : "text-white-50") py-1 ps-3 text-nowrap"
+                                               asp-controller="Attribute" asp-action="AddAttributes">
+                                                <i class="bi bi-plus-circle-dotted me-1"></i> Define Attribute
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+
+                            @* --- TOPIC SECTION --- *@
+                            <li class="nav-item mb-2">
+                                <a class="nav-link text-white rounded d-flex justify-content-between align-items-center p-2"
+                                   style="background: @(topicOpen ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.1)");"
+                                   asp-controller="Topic" asp-action="Topic">
+                                    <span><i class="bi bi-journal-bookmark-fill me-2"></i> Topic</span>
+                                    <i class="bi @(topicOpen ? "bi-chevron-up" : "bi-chevron-down") small opacity-75"></i>
+                                </a>
+                                <div class="collapse @(topicOpen ? "show" : "")">
+                                    <ul class="nav flex-column ms-3 mt-1 border-start border-white-50">
+                                        <li class="nav-item">
+                                            <a class="nav-link @(currentAction == "AddTopic" ? "text-white fw-bold" : "text-white-50") py-1 ps-3 text-nowrap"
+                                               asp-controller="Topic" asp-action="AddTopic">
+                                                <i class="bi bi-plus-circle-dotted me-1"></i> Define Topic
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            @* --- APB Project --- *@
+                            <li class="nav-item mb-2">
+                                <a class="nav-link text-white rounded d-flex justify-content-between align-items-center p-2"
+                                   style="background: @(ProjectOpen ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.1)");"
+                                   asp-controller="APBProject" asp-action="Project">
+                                    <span><i class="bi bi-kanban me-2"></i> APB Project</span>
+                                    <i class="bi @(ProjectOpen ? "bi-chevron-up" : "bi-chevron-down") small opacity-75"></i>
+                                </a>
+                                <div class="collapse @(ProjectOpen ? "show" : "")" id="projectSubmenu">
+                                    <ul class="nav flex-column ms-3 mt-1 border-start border-white-50">
+                                        <li class="nav-item">
+                                            @* Logic fix: active class for the create view *@
+                                            <a class="nav-link @(currentAction == "AddProject" ? "text-white fw-bold" : "text-white-50") py-1 ps-3 text-nowrap"
+                                               asp-controller="APBProject" asp-action="AddProject">
+                                                <i class="bi bi-plus-circle-dotted me-1"></i> Define Project
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            @* --- User Master Section --- *@
+                            <li class="nav-item mb-2">
+                                <a class="nav-link text-white rounded d-flex justify-content-between align-items-center p-2"
+                                   style="background: @(UserLog ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.1)");"
+                                   href="#userMasterSubmenu" data-bs-toggle="collapse" aria-expanded="@(UserLog ? "true" : "false")">
+                                    <span><i class="bi bi-people me-2"></i> User Master</span>
+                                    <i class="bi @(UserLog ? "bi-chevron-up" : "bi-chevron-down") small opacity-75"></i>
+                                </a>
+                                <div class="collapse @(UserLog ? "show" : "")" id="userMasterSubmenu">
+                                    <ul class="nav flex-column ms-3 mt-1 border-start border-white-50">
+
+                                        <li class="nav-item">
+                                            <a class="nav-link @(currentAction == "User" ? "text-white fw-bold" : "text-white-50") py-1 ps-3 text-nowrap"
+                                               asp-controller="AccessControl" asp-action="User">
+                                                <i class="bi bi-person-lines-fill me-2"></i>User List
+                                            </a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link @(currentAction == "Access" ? "text-white fw-bold" : "text-white-50") py-1 ps-3 text-nowrap"
+                                               asp-controller="AccessControl" asp-action="Access">
+                                                <i class="bi bi-shield-lock me-2"></i>Access Control
+                                            </a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link @(currentAction == "Master" ? "text-white fw-bold" : "text-white-50") py-1 ps-3 text-nowrap"
+                                               asp-controller="AccessControl" asp-action="Master">
+                                                <i class="bi bi-sliders me-2"></i>Master Control
+                                            </a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link @(currentAction == "Index" && currentController == "UserLog" ? "text-white fw-bold" : "text-white-50") py-1 ps-3 text-nowrap"
+                                               asp-controller="UserLog" asp-action="Index">
+                                                <i class="bi bi-journal-text me-2"></i>User Log
+                                            </a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link @(currentAction == "ChatSession" && currentController == "UserLog" ? "text-white fw-bold" : "text-white-50") py-1 ps-3 text-nowrap"
+                                               asp-controller="UserLog"
+                                               asp-action="ChatSession">
+                                                <i class="bi bi-clock-history me-2"></i>Chat Session
+                                            </a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link @(currentAction == "ChatConversation" && currentController == "UserLog" ? "text-white fw-bold" : "text-white-50") py-1 ps-3 text-nowrap"
+                                               asp-controller="UserLog"
+                                               asp-action="ChatConversation">
+                                                <i class="bi bi-chat-left-text me-2"></i>Conversation
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            @* --- Chat Setting --- *@
+                            <li class="nav-item mb-2">
+                                <a class="nav-link text-white rounded d-flex justify-content-between align-items-center p-2"
+                                   style="background: @(chatSettingOpen ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.1)");"
+                                   asp-controller="ChatTheme" asp-action="ChatTheme">
+
+                                    <span class="@(chatSettingOpen ? "fw-bold" : "")">
+                                        <i class="bi bi-gear-wide-connected me-2"></i> Chat Settings
+                                    </span>
+                                    <i class="bi bi-chevron-right small opacity-50"></i>
+                                </a>
+                            </li>
+
+                            @* --- Log Out --- *@
+                            <li class="nav-item mt-auto mb-2">
+                                <a class="nav-link text-white rounded d-flex align-items-center p-2"
+                                   style="background: rgba(255,255,255,0.1);"
+                                   asp-controller="Login" asp-action="Logout">
+                                    <i class="bi bi-box-arrow-right me-2"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                    <div class="d-flex justify-content-between align-items-center pt-3 pb-2 mb-3 border-bottom sticky-top bg-white">
+                        <h1 class="fw-bold text-dark m-0 h3">@ViewData["Title"]</h1>
+                        <div class="user-profile-wrapper d-flex align-items-center">
+                            <div class="text-end me-3 d-none d-sm-block">
+                                <p class="welcome-text mb-0" style="font-size: 0.7rem; color: #6c757d; text-transform: uppercase;">Welcome,</p>
+                                <p class="user-name-text fw-bold mb-0" style="font-size: 0.9rem;">@sessionName</p>
+                            </div>
+                            <div class="avatar-circle-top" style="width: 40px; height: 40px; background: #8728E1; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+                                <span>@firstLetter</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-2">
+                        @RenderBody()
+                    </div>
+                </main>
+            </div>
+        </div>
+    }
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <script>
+        function handleMainClick(e) {
+            const submenu = document.getElementById('mainSubmenu');
+            const isExpanded = submenu.classList.contains('show');
+            window.location.href = '@Url.Action("Main", "Main")';
+        }
+    </script>
+
+    <script>
+        // SweetAlert Handler for TempData Messages
+        document.addEventListener("DOMContentLoaded", function () {
+            var message = '@TempData["ValidateUser"]';
+            if (message && message !== "") {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Message',
+                    text: message,
+                    timer: 3000,
+                    showConfirmButton: false
+                });
+            }
+        });
+    </script>
+
+    <script>
+        // This script runs when the page is shown (including back button nav)
+        window.onpageshow = function (event) {
+            // If the page is loaded from the browser cache (back button)
+            if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
+                // Force a refresh from the server
+                window.location.reload();
+            }
+        };
+    </script>
+</body>
+</html>

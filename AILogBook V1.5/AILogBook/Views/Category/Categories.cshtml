@@ -1,0 +1,205 @@
+﻿@{
+    ViewData["Title"] = "Categories";
+}
+<style>
+
+    .custom-label {
+        font-weight: bold;
+        white-space: nowrap;
+        color: #444;
+    }
+    /* GridView */
+    #myGrid thead th {
+        background-color: #8728E1 !important;
+        color: white !important;
+        border-color: #7221C1;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    .dataTables_scrollHead thead th {
+        background-color: #8728E1 !important;
+        color: white !important;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    .dataTables_scrollHead {
+        background-color: #8728E1 !important;
+    }
+
+    /* Card Base Styling */
+    .custom-card {
+        border: none;
+        border-radius: 15px;
+        background: #ffffff;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .custom-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(135, 40, 225, 0.1);
+        }
+
+    /* Borders for specific cards */
+    .border-purple {
+        border-bottom: 5px solid #8728E1 !important;
+    }
+
+    .border-green {
+        border-bottom: 5px solid #2ecc71 !important;
+    }
+
+    /* Stat Titles & Numbers */
+    .stat-title {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #888;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 10px;
+    }
+
+    .stat-number {
+        font-size: 2.2rem;
+        font-weight: 800;
+        margin-bottom: 0;
+    }
+
+    .text-purple {
+        color: #8728E1;
+    }
+
+    .text-green {
+        color: #2ecc71;
+    }
+</style>
+
+<div class="row justify-content-center g-4">
+    <div class="col-md-3">
+        <div class="card custom-card border-purple">
+            <div class="card-body text-center">
+                
+                <h6 class="stat-title">Total Categories</h6>
+                <h2 class="stat-number text-purple">@(ViewBag.TotalCate)</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="d-flex justify-content-end mt-3 pe-2 gap-3">
+    <a asp-action="AddCategory" asp-controller="Category" class="text-decoration-none" title="Add Category">
+        <img src="~/images/add.png" alt="Add" style="height:25px; width:25px;" />
+        <span class="custom-label" style="cursor:pointer;">Category</span>
+    </a>
+    <a asp-action="Download" asp-controller="Category" class="text-decoration-none">
+        <img src="~/images/excel.png" alt="Download" style="height:25px; width:25px;" />
+        <span class="custom-label" style="cursor:pointer;">Download</span>
+    </a>
+</div>
+
+<div>
+    <table id="myGrid" class="table table-striped table-hover mt-3 w-100">
+        <thead>
+            <tr>
+                <th>Edit</th>   
+                <th>Delete</th>
+                <th>Attribute</th>
+                <th>AutoID</th>
+                <th>CategoryName</th>
+                <th>CategoryUsedInPromptlist</th>
+                <th>User</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Active</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (ViewBag.CateList != null)
+            {
+                var result = ViewBag.CateList as List<AILogBook.Models.Categories>;
+                for (int i = 0; i < result.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            <a asp-action="EditCategory" asp-controller="Category" asp-route-id="@result[i].AutoId" class="btn p-0" title="Edit Category">
+                                <img src="~/images/edit.png" style="height:30px; width:30px;" />
+                            </a>
+                        </td>
+                        <td>
+                            <a asp-action="DeleteCategory" asp-controller="Category" asp-route-id="@result[i].AutoId" title="Delete Category"
+                               class="btn btn-sm btn-icon-only p-0" onclick="return confirm('Are you sure you want to delete this category?');">
+                                <img src="~/images/delete.png" alt="Delete" style="height:30px; width:30px;" />
+                            </a>
+                        </td>
+                        @* <td>
+                            <a asp-action="GetAttributesByCategory" asp-controller="Attribute" asp-route-id="@result[i].AutoId">
+                                <img src="~/images/attri.png" alt="attri" style="height:30px; width:30px;" />
+                            </a>
+                        </td> *@
+                        <td>
+                            <a asp-action="AddMultiAttribute" title="Add Attribute"
+                               asp-controller="Attribute"
+                               asp-route-id="@result[i].AutoId">
+                                <img src="~/images/attri.png" alt="Attributes" style="height:30px; width:30px;" />
+                            </a>
+                        </td>
+                        <td>@result[i].AutoId</td>
+                        <td>@result[i].CategoryName</td>
+                        <td>@result[i].count</td>
+                        <td>@result[i].UpdatedUser</td>
+                        <td>@result[i].UpdatedDate</td>
+                        <td>@result[i].UpdatedTime</td>
+                        <td>
+                            <span class="badge @(result[i].Active ? "bg-success" : "bg-danger")">
+                                @(result[i].Active ? "Active" : "Inactive")
+                            </span>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css" />
+
+    <script type="text/javascript">
+                        $(document).ready(function () {
+            var table = $('#myGrid').DataTable({
+                "paging": true,
+                "ordering": true,
+                "info": true,
+                "searching": true,
+                "pageLength": 25,
+                "scrollX": true,
+                "autoWidth": false,
+                "order": [[3, 'asc']],
+                "columnDefs": [
+                    {
+                        "orderable": false,
+                        "targets": [0, 1, 2],
+                        "width": "45px",
+                        "className": "text-center"
+                    }
+                ],
+                "language": {
+                    "emptyTable": "No records found matching your search."
+                }
+            });
+        });
+    </script>
+}
+@if (TempData["Msg"] != null)
+{
+    <script>
+        window.onload = function() {
+            alert('@TempData["Msg"]');
+        };
+    </script>
+}

@@ -1,0 +1,223 @@
+﻿@{
+    ViewData["Title"] = "SignIn";
+}
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    /*.header{
+        width : 100%;
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .section {
+        width: 60%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction:column;
+    }
+    */
+    .error-text {
+        color: red;
+        font-size: 12px;
+    }
+
+    .btnSubmit {
+        background-color: #7f00b2;
+        color: #fefefe;
+        width: 200px;
+        height: 30px;
+        border-radius: 10%;
+    }
+
+    .input-group {
+        position: relative;
+        margin-bottom: 15px;
+    }
+
+        /* Icon inside input */
+        .input-group i {
+            position: absolute;
+            left: 0;
+            bottom: 8px; /* aligns with underline */
+            font-size: 16px;
+            color: #888;
+        }
+        /* Left icon (lock) */
+        .input-group .left-icon {
+            position: absolute;
+            left: 0;
+            bottom: 8px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* Right icon (eye) */
+        .input-group .right-icon {
+            position: absolute;
+            right: 0;
+            bottom: 8px;
+            font-size: 14px;
+            color: #888;
+            cursor: pointer;
+        }
+    /* Input styling */
+    .underline-input {
+        width: 100%;
+        border: none;
+        border-bottom: 1.5px solid #ccc;
+        padding: 8px 0 6px 22px; /* space for icon */
+        outline: none;
+        font-size: 14px;
+        background: transparent;
+        transition: 0.2s ease;
+    }
+
+        /* Focus effect */
+        .underline-input:focus {
+            border-bottom: 2px solid #7f00b2;
+        }
+
+        /* Error */
+        .underline-input.error {
+            border-bottom: 2px solid #dc3545;
+        }
+</style>
+<div class="header w-100 vh-100 d-flex align-items-center justify-content-center">
+    <div class="section w-50 h-auto d-flex align-items-center justify-content-center flex-column border-1 shadow-lg p-4 bg-white rounded">
+        <form asp asp-action="UserSign" method="post">
+            <h2>Signin</h2>
+            <div class="info mb-3">
+                <label for="Login_Name">Username</label>
+                <div class="d-flex">
+                    <span class="icon"><i class="fa-regular fa-user"></i></span><input type="text" id="username" class="underline-input" name="Login_Name" />
+                </div>
+                <small id="usernameError" class="error-text"></small>
+            </div>
+            <div class="info mb-3">
+                <label for="User_Password">Password</label>
+                @* 				<span><i class="fa-solid fa-lock"></i></span>
+ *@				<div class="d-flex">
+                    <span><i class="fa-solid fa-lock"></i></span><input type="password" id="password" class="underline-input" name="User_Password" /><i class="fa-solid fa-eye" id="togglePassword"></i>
+                </div>
+                <small id="passwordError" class="error-text"></small>
+            </div>
+            <div class="info mb-3">
+                <p>
+                    Don't have an account?
+                    <a asp-controller="Login" asp-action="Signup">Sign In</a>
+                    @* 					<a href="/SignUp/Signup">Sign Up</a>
+ *@				</p>
+            </div>
+            <div>
+                <button type="submit" class="btnSubmit" onclick="return checkData()">Log in</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            var message = @Html.Raw(Json.Serialize(TempData["ValidateUser"] ?? ""));
+
+            const usernameInput = document.getElementById("username");
+            const passwordInput = document.getElementById("password");
+            const togglePassword = document.getElementById("togglePassword");
+
+            loadSavedData();
+
+            if (message && message !== "") {
+                Swal.fire({
+                    icon: 'error',
+                    title: message,
+                    showConfirmButton: false,
+                    timer: 3000
+                });
+
+                removePasswordFromStorage(); // 🔥 important
+            }
+
+            usernameInput.addEventListener("input", saveData);
+            passwordInput.addEventListener("input", saveData);
+
+            function saveData() {
+                sessionStorage.setItem("loginData", JSON.stringify({
+                    username: usernameInput.value,
+                    password: passwordInput.value
+                }));
+            }
+
+            function loadSavedData() {
+                const data = JSON.parse(sessionStorage.getItem("loginData"));
+
+                if (data) {
+                    usernameInput.value = data.username || "";
+                    passwordInput.value = data.password || "";
+                }
+            }
+
+            function removePasswordFromStorage() {
+                const data = JSON.parse(sessionStorage.getItem("loginData"));
+
+                if (data) {
+                    delete data.password;
+                    sessionStorage.setItem("loginData", JSON.stringify(data));
+                }
+            }
+
+            togglePassword.addEventListener("click", function () {
+                const type = passwordInput.type === "password" ? "text" : "password";
+                passwordInput.type = type;
+                this.classList.toggle("fa-eye-slash");
+            });
+
+            usernameInput.addEventListener("blur", function () {
+                let errorText = document.getElementById("usernameError");
+
+                if (usernameInput.value.trim() === "") {
+                    usernameInput.classList.add("error");
+                    errorText.textContent = "Username is required";
+                } else {
+                    usernameInput.classList.remove("error");
+                    errorText.textContent = "";
+                }
+            });
+
+            passwordInput.addEventListener("blur", function () {
+                let errorText = document.getElementById("passwordError");
+
+                if (passwordInput.value.trim() === "") {
+                    passwordInput.classList.add("error");
+                    errorText.textContent = "Password is required";
+                } else {
+                    passwordInput.classList.remove("error");
+                    errorText.textContent = "";
+                }
+            });
+
+        });
+
+        function checkData() {
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            if (username === "" || password === "") {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'All fields are required'
+                });
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</div>
+
+

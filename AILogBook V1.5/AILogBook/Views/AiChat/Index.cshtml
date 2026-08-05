@@ -1,0 +1,368 @@
+﻿@model List<AILogBook.Models.ChatMessage>
+@{
+    Layout = null;
+    var aiIcon = !string.IsNullOrEmpty(ViewBag.AI) ? Url.Content(ViewBag.AI) : Url.Content("~/images/AI.png");
+    var userIcon = !string.IsNullOrEmpty(ViewBag.Resp) ? Url.Content(ViewBag.Resp) : Url.Content("~/images/Resp.png");
+    var vksLogo = !string.IsNullOrEmpty(ViewBag.vksLogo) ? Url.Content(ViewBag.vksLogo) : Url.Content("~/images/VKS.png");
+    var chatBG = !string.IsNullOrEmpty(ViewBag.ChatBG) ? Url.Content(ViewBag.ChatBG) : Url.Content("~/images/bgimg.png");
+
+    var themeColor = ViewBag.HeaderColor ?? "#007bff";
+    var chatTitle = ViewBag.ChatTitle ?? "VKS: AI Assistant";
+    var chatWait = ViewBag.ChatWait ?? 1;
+
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VKS AI Assistant</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+        }
+
+        .header-title-container {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+            .header-title-container h5 {
+                font-size: 1.1rem;
+                font-weight: 600;
+                margin: 0;
+            }
+
+            .header-title-container small {
+                font-size: 0.8rem;
+                opacity: 0.9;
+                display: block;
+            }
+
+        .chat-container-full {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: #e5ddd5;
+        }
+
+        .chat-header {
+            padding: 10px 20px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+
+        #chatWindow {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            background-attachment: local;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgba(0, 0, 0, 0.3) !important;
+            background-blend-mode: darken;
+        }
+
+        /* Message Wrapper Logic */
+        .msg-wrapper {
+            display: flex;
+            margin-bottom: 20px;
+            width: 100%;
+            align-items: flex-end;
+        }
+
+        .bot-row {
+            flex-direction: row;
+        }
+
+        .user-row {
+            flex-direction: row-reverse;
+        }
+
+        .bubble {
+            max-width: 75%;
+            padding: 12px 18px;
+            border-radius: 18px;
+            font-size: 0.95rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            margin: 0 12px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+            .bubble p {
+                margin: 0;
+                color: #212529 !important;
+                white-space: pre-wrap;
+            }
+
+        .bot-bubble {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+        }
+
+            .bot-bubble .timestamp {
+                text-align: left;
+                width: 100%;
+            }
+
+        .user-bubble {
+            background-color: rgba(220, 248, 198, 0.95) !important;
+        }
+
+            .user-bubble .timestamp {
+                text-align: right;
+                width: 100%;
+            }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            background: white;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+            .avatar img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        .timestamp {
+            font-size: 0.7rem;
+            color: #6c757d;
+            margin-top: 6px;
+            display: block;
+            text-align: right;
+        }
+
+        .chat-header {
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+
+        .chat-footer {
+            background: white;
+            padding: 15px 10%;
+            border-top: 1px solid #ddd;
+        }
+
+        #typingIndicator {
+            display: none;
+            font-style: italic;
+            color: #555;
+            font-size: 0.85rem;
+            margin-left: 65px;
+            margin-bottom: 10px;
+        }
+
+
+        #chatWindow::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        #chatWindow::-webkit-scrollbar-thumb {
+            background: rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container-full">
+        <div class="chat-header p-2 text-white d-flex align-items-center justify-content-between" style="background-color: @themeColor !important;">
+            <img src="@vksLogo" alt="VKS Logo" height="50px" width="50px" style="object-fit: contain;" onerror="this.onerror=null; this.src='@Url.Content("~/images/VKS.png")';" />
+            <div style="width: 40px;"></div>
+            <div class="header-title-container">
+                <h4>@chatTitle</h4>
+                <small>@ViewBag.CateName | @ViewBag.TopicName | ID: @ViewBag.Id</small>
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-light border-0" onclick="showPreviousChats()">
+                <i class="bi bi-arrow-clockwise"></i> Reset
+            </button>
+        </div>
+
+        <div id="chatWindow" style="background-image: url('@chatBG') !important;">
+            @if (Model != null)
+            {
+                foreach (var msg in Model.Where(m => m.role != "system"))
+                {
+                    var isUser = msg.role == "user";
+                    <div class="msg-wrapper @(isUser ? "user-row" : "bot-row")">
+                        <div class="avatar shadow-sm">
+                            <img src="@(isUser? userIcon : aiIcon)" />
+                        </div>
+                        <div class="bubble @(isUser ? "user-bubble" : "bot-bubble")">
+                            <p class="mb-0">@msg.content</p>
+                            <span class="timestamp">@DateTime.Now.ToString("hh:mm tt")</span>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+
+        <div id="typingIndicator">
+            <span class="spinner-grow spinner-grow-sm text-primary"></span> AI is generating...
+        </div>
+
+        <div class="chat-footer">
+            <div class="input-group">
+                <input type="text" id="userInput" class="form-control border-0 bg-light shadow-none"
+                       placeholder="Type your reply..." autocomplete="off"
+                       style="border-radius: 25px 0 0 25px; padding: 12px 20px;" />
+
+                <button type="button" id="sendBtn" class="btn border-0 text-white px-4"
+                        style="background-color: @themeColor !important; border-radius: 0 25px 25px 0;">
+                    <i class="bi bi-send-fill fs-5"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        const chatWindow = document.getElementById("chatWindow");
+        const aiIcon = "@aiIcon";
+        const userIcon = "@userIcon";
+        const finalEndPrompt = `@Html.Raw(ViewBag.FinalEndPrompt)`;
+        const chatWaitTime = @chatWait * 10000;
+        //const isTimerActive = @(ViewBag.isTimer ?? 0);
+        const isTimerActive = @(ViewBag.isTimer == true ? 1 : 0);
+        let waitTimer;
+
+            function scroll() { chatWindow.scrollTop = chatWindow.scrollHeight; }
+
+        function addMessageUI(role, text) {
+            const isUser = (role === 'user');
+            const icon = isUser ? userIcon : aiIcon;
+            const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            const html = `
+               <div class="msg-wrapper ${isUser ? 'user-row' : 'bot-row'}">
+                   <div class="avatar shadow-sm"><img src="${icon}" /></div>
+                   <div class="bubble ${isUser ? 'user-bubble' : 'bot-bubble'}">
+                       <p class="mb-0" style="white-space: pre-wrap; display: inline-block; text-align: left;">${text}</p>
+                       <span class="timestamp">${time}</span>
+                   </div>
+               </div>`;
+
+           $("#chatWindow").append(html);
+           scroll();
+        }
+
+        function showPreviousChats() {
+            if (!confirm("Are you sure you want to reset the chat?")) return;
+
+            var currentSessionId = '@ViewBag.ChatSessionId';
+
+            $.post('@Url.Action("Reset", "AiChat")', {
+                projectKey: '@ViewBag.PKey',
+                resId: '@ViewBag.ResponId',
+                sessionId: currentSessionId
+            }, function(response) {
+                var url = '@Url.Action("Index", "AiChat")' +
+                          '?projectKey=' + encodeURIComponent('@ViewBag.PKey') +
+                          '&resId=' + '@ViewBag.ResponId' +
+                          '&Remark=Reset';
+
+                window.location.href = url;
+            });
+        }
+
+        $("#sendBtn").click(function() {
+            const btn = $(this);
+            const text = $("#userInput").val().trim();
+            if (!text) return;
+
+            // 1. UI Updates
+            addMessageUI('user', text);
+            $("#userInput").val("");
+
+            $("#typingIndicator").show();
+            btn.prop('disabled', true).css('opacity', '0.7');
+            scroll();
+
+            if (isTimerActive === 1){
+                waitTimer = setTimeout(function() {
+                if (confirm("The AI is taking a while. Do you want to keep waiting? Click 'Ok' to reset.")) {
+                    showPreviousChats();
+                } else {
+                }
+                }, chatWaitTime);
+            }
+
+
+            // 2. AJAX Call
+            $.ajax({
+                url: '@Url.Action("AskBot", "AiChat")',
+                type: 'POST',
+                data: {
+                    UserInput: text,
+                    PromptId: '@ViewBag.PId',
+                    SessionId: '@ViewBag.ChatSessionId',
+                    mId: '@ViewBag.ModelId',
+                    resId: '@ViewBag.Id',
+                    Pcode: '@ViewBag.ProjectCode'
+                },
+                success: function(res) {
+                    if (isTimerActive === 1){
+                        clearTimeout(waitTimer);
+                    }
+                    $("#typingIndicator").hide();
+                    btn.prop('disabled', false).css('opacity', '1');
+
+                    if(res.botResponse) {
+                        addMessageUI('assistant', res.botResponse);
+
+                        // 3. Check for End of Conversation
+                        const rBot = res.botResponse.toLowerCase().trim();
+                        const finEnd = finalEndPrompt.toLowerCase().trim();
+
+                        if (finEnd !== "" && rBot === finEnd) {
+                            $(".chat-footer").fadeOut(500, function() { $(this).remove(); });
+                            $("#chatWindow").append('<div class="text-center my-3"><span class="badge bg-secondary">Conversation Ended</span></div>');
+                            scroll();
+                            saveEndTime();
+                        }
+                    }
+                },
+                error: function() {
+                    if (isTimerActive === 1){
+                        clearTimeout(waitTimer);
+                    }
+                    $("#typingIndicator").hide();
+                    btn.prop('disabled', false).css('opacity', '1');
+                    alert("Error: AI could not respond.");
+                }
+            });
+        });
+
+        function saveEndTime() {
+            $.post('@Url.Action("UpdateSessionEnd", "AiChat")', { sessionId: '@ViewBag.ChatSessionId' });
+        }
+
+        $("#userInput").on('keypress', (e) => { if(e.which == 13) $("#sendBtn").click(); });
+
+        scroll();
+    </script>
+</body>
+</html>
+

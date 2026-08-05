@@ -1,0 +1,157 @@
+﻿@{
+    ViewData["Title"] = "Access Control";
+    var loginNames = ViewBag.LoginName as List<AILogBook.Models.UserMasterDto>;
+    var tableData = ViewBag.Data as List<AILogBook.Models.AccessConrolDto>;
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/AccessControlStyle.css" />
+</head>
+
+<div class="MainContent w-100 h-100">
+    <div class="sections w-100 h-100 d-flex gap-3">
+
+        @* --- LEFT SECTION: User Selection Dropdown --- *@
+        <div class="left p-3 w-25 border-end">
+            <form asp-action="UserAccess" method="post">
+                <div class="mb-2">
+                    <label class="form-label fw-bold">Select User</label>
+                    <div class="d-flex align-items-center">
+                        <select name="Login_Name" id="userSelect" class="form-select me-2">
+                            <option value="">-- Select User --</option>
+                            @if (loginNames != null)
+                            {
+                                foreach (var item in loginNames)
+                                {
+                                    @* Keeps the selected user visible after clicking "Ok" *@
+                                    <option value="@item.Login_Name" selected="@(item.Login_Name == ViewBag.username ? "selected" : null)">
+                                        @item.Login_Name
+                                    </option>
+                                }
+                            }
+                        </select>
+
+                        <button type="submit" class="btn btn-outline-success">
+                            Ok
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        @* --- RIGHT SECTION: Permissions Table --- *@
+        <div class="right p-4 w-75 d-flex flex-column">
+
+            <div class="top-controls d-flex justify-content-between align-items-center mb-3">
+                <div class="d-flex align-items-center gap-2">
+                    <span>Show</span>
+                    <select id="entriesSelect" class="form-select form-select-sm" style="width: auto;">
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                    </select>
+                    <span>entries</span>
+                </div>
+                <input type="text" id="searchInput" placeholder="Search module..." class="form-control w-25" />
+            </div>
+
+            <form asp-action="UpdateUser_Controls" method="post">
+                @if (tableData != null)
+                {
+                    <div style="font-size:20px; margin-bottom:15px;">
+                        <b>User :</b>
+                        <span style="color:#7e117e; font-weight: bold;">
+                            @ViewBag.username
+                        </span>
+                    </div>
+                    @* Important: Pass the username back so the table reloads correctly after saving *@
+                    <input type="hidden" name="Login_Name" value="@ViewBag.username" />
+
+                    <table class="table table-bordered text-center align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Module</th>
+                                <th>Type</th>
+                                <th>Add</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                                <th>Download</th>
+                                <th>M_active</th>
+                                <th>Save</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @for (int i = 0; i < tableData.Count; i++)
+                            {
+                                <tr>
+                                    <td class="text-start">
+                                        <b>@tableData[i].Section</b>
+                                        <input type="hidden" name="data[@i].Auto_Id" value="@tableData[i].Auto_Id" />
+                                        <input type="hidden" name="data[@i].Section" value="@tableData[i].Section" />
+                                    </td>
+                                    <td>
+                                        @tableData[i].Type
+                                        <input type="hidden" name="data[@i].Type" value="@tableData[i].Type" />
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="data[@i].Add" value="true" @(tableData[i].Add ? "checked" : "") />
+                                        <input type="hidden" name="data[@i].Add" value="false" />
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="data[@i].Edit" value="true" @(tableData[i].Edit ? "checked" : "") />
+                                        <input type="hidden" name="data[@i].Edit" value="false" />
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="data[@i].Delete" value="true" @(tableData[i].Delete ? "checked" : "") />
+                                        <input type="hidden" name="data[@i].Delete" value="false" />
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="data[@i].Download" value="true" @(tableData[i].Download ? "checked" : "") />
+                                        <input type="hidden" name="data[@i].Download" value="false" />
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="data[@i].M_active" value="true" @(tableData[i].M_active ? "checked" : "") />
+                                        <input type="hidden" name="data[@i].M_active" value="false" />
+                                    </td>
+                                    <td>
+                                        <button type="submit" name="index" value="@i" class="btn btn-primary btn-sm">
+                                            Save
+                                        </button>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+                else
+                {
+                    <div class="alert alert-info text-center mt-5">
+                        <h4>Please select a user to manage access permissions.</h4>
+                    </div>
+                }
+            </form>
+
+            <div class="pagination-controls d-flex justify-content-end m-1">
+                <button id="prevPageBtn" class="btn btn-sm btn-outline-secondary" disabled>&larr; Previous</button>
+                <button id="nextPageBtn" class="btn btn-sm btn-outline-secondary ms-2">Next &rarr;</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="~/js/Search_ShowEntries.js"></script>
+<script src="~/js/Pagination.js"></script>
+
+<script>
+    var successMsg = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(TempData["SuccessMsg"]));
+    var errorMsg = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(TempData["ErrorMsg"]));
+
+    if (successMsg) {
+        Swal.fire({ icon: 'success', title: successMsg, showConfirmButton: false, timer: 2000 });
+    }
+    if (errorMsg) {
+        Swal.fire({ icon: 'error', title: errorMsg, showConfirmButton: false, timer: 2000 });
+    }
+</script>

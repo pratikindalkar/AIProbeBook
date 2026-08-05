@@ -1,0 +1,374 @@
+﻿@model AILogBook.Models.PromptList
+
+@{
+    ViewData["Title"] = "Define Prompt Details";
+}
+
+<style>
+    :root {
+        --brand-purple: #8728E1;
+        --border-color: #dce0e4;
+        --text-dark: #444;
+        --bg-light: #fdfdfd;
+        --input-focus: rgba(135, 40, 225, 0.1);
+    }
+
+    .prompt-grid {
+        display: grid;
+        grid-template-columns: 140px 1fr 140px 1fr;
+        gap: 15px 15px;
+        align-items: start;
+    }
+
+    .custom-label {
+        font-weight: bold;
+        color: var(--text-dark);
+        font-size: 0.9rem;
+        padding-top: 10px;
+    }
+
+    .custom-select, .custom-txt {
+        width: 90%;
+        padding: 10px 14px;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        font-size: 0.95rem;
+        outline: none;
+        transition: all 0.2s ease-in-out;
+        background-color: var(--bg-light);
+        color: #333;
+    }
+
+        .custom-select:focus, .custom-txt:focus {
+            border-color: var(--brand-purple);
+            box-shadow: 0 0 0 4px var(--input-focus);
+            background-color: #fff;
+        }
+
+    .input-group-custom {
+        display: flex;
+        align-items: center; /* Centers icon with textarea */
+        gap: 10px;
+    }
+
+    .full-width {
+        grid-column: 2 / span 3;
+    }
+
+    textarea.custom-txt {
+        min-height: 75px;
+        resize: vertical;
+    }
+
+    .textarea-large {
+        /* min-height: 100% !important; */
+        height: 100px;
+    }
+    .textarea-large1 {
+        /* min-height: 150% !important; */
+        height: 200px;
+    }
+
+    .button-container {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: flex-start;
+        gap: 16px;
+        margin-top: 32px;
+        padding-top: 24px;
+        border-top: 1px solid #eee;
+    }
+
+    .custom-btn {
+        padding: 12px 48px;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        text-decoration: none;
+    }
+
+    .btn-save {
+        background-color: var(--brand-purple);
+        color: white;
+    }
+
+    .btn-cancel {
+        background-color: #f8f9fa;
+        color: #666;
+        border: 1px solid #ddd;
+    }
+
+    .text-danger {
+        font-size: 0.8rem;
+        color: #dc3545;
+        display: block;
+        margin-top: 4px;
+    }
+
+    /* --- Checkbox Styling --- */
+    input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        accent-color: #8728E1; /* Matches your brand color */
+        cursor: pointer;
+        margin: 0;
+    }
+</style>
+
+<form asp-action="@(Model?.AutoID > 0 ? "EditPrompt" : "SavePrompt")" asp-controller="Main" method="post">
+    <input type="hidden" name="AutoID" value="@(Model?.AutoID ?? 0)" />
+
+    <div class="form-container">
+        <div class="prompt-grid">
+
+            <label class="custom-label">Select Category</label>
+            <select name="CategoryID" class="custom-select">
+                <option value="">-- Select Category --</option>
+                @if (ViewBag.CateList != null)
+                {
+                    foreach (var item in (List<AILogBook.Models.Categories>)ViewBag.CateList)
+                    {
+                        <option value="@item.AutoId" selected="@(item.AutoId == Model?.CategoryID)">
+                            @item.CategoryName
+                        </option>
+                    }
+                }
+            </select>
+
+            <label class="custom-label">Select Topic</label>
+            <select name="TopicID" class="custom-select">
+                <option value="">-- Select Topics --</option>
+                @if (ViewBag.TopicList != null)
+                {
+                    foreach (var item in (List<AILogBook.Models.Topics>)ViewBag.TopicList)
+                    {
+                        <option value="@item.AutoId" selected="@(item.AutoId == Model?.TopicID)">
+                            @item.Topic
+                        </option>
+                    }
+                }
+            </select>
+
+            <label class="custom-label">Positive Attribute</label>
+            <div class="input-group-custom">
+                <textarea id="txtPA" name="PositiveAttributes" class="custom-txt">@Model?.PositiveAttributes</textarea>
+                @* <button type="button" class="btn-autogen ajax-autogen" data-id="3">Auto Gen</button> *@
+                <a href="javascript:void(0);" class="ajax-autogen" data-id="3" title="Auto Generate">
+                    <img src="~/images/refresh.png" alt="Refresh" height="15px;" width="15px;" margin-left:10px; cursor:pointer; />
+
+                </a>
+            </div>
+
+            <label class="custom-label">Negative Attribute</label>
+            <div class="input-group-custom">
+                <textarea id="txtNA" name="NegativeAttributes" class="custom-txt">@Model?.NegativeAttributes</textarea>
+                @*  <button type="button" class="btn-autogen ajax-autogen" data-id="4">Auto Gen</button> *@
+                <a href="javascript:void(0);" class="ajax-autogen" data-id="4" title="Auto Generate">
+                    <img src="~/images/refresh.png" alt="Refresh" height="15px;" width="15px;" margin-left:10px; cursor:pointer; />
+                </a>
+            </div>
+
+            <label class="custom-label">Blocked Prompt</label>
+            <div class="input-group-custom">
+                <textarea id="txtBP" name="BlockedPrompt" class="custom-txt">@Model?.BlockedPrompt</textarea>
+                @* <button type="button" class="btn-autogen ajax-autogen" data-id="3">Auto Gen</button> *@
+                <a href="javascript:void(0);" class="ajax-autogen" data-id="10" title="Auto Generate">
+                    <img src="~/images/refresh.png" alt="Refresh" height="15px;" width="15px;" margin-left:10px; cursor:pointer; />
+
+                </a>
+            </div>
+
+            <label class="custom-label">User Ignore Prompt</label>
+            <div class="input-group-custom">
+                <textarea id="txtUIP" name="UserIgnorePrompt" class="custom-txt">@Model?.UserIgnorePrompt</textarea>
+                @*  <button type="button" class="btn-autogen ajax-autogen" data-id="4">Auto Gen</button> *@
+                <a href="javascript:void(0);" class="ajax-autogen" data-id="11" title="Auto Generate">
+                    <img src="~/images/refresh.png" alt="Refresh" height="15px;" width="15px;" margin-left:10px; cursor:pointer; />
+                </a>
+            </div>
+
+            <label class="custom-label">Initial Prompt</label>
+            <div class="full-width input-group-custom">
+                <textarea id="txtinitial" name="InitialPrompt" class="custom-txt textarea-large">@Model?.InitialPrompt</textarea>
+                <a href="javascript:void(0);" class="ajax-autogen" data-id="1" title="Auto Generate">
+                    <img src="~/images/refresh.png" alt="Refresh" height="15px;" width="15px;" margin-left:10px; cursor:pointer; />
+                </a>
+                <span asp-validation-for="InitialPrompt" class="text-danger"></span>
+            </div>
+
+            <label class="custom-label">Prompt 1</label>
+            <div class="full-width">
+                <textarea id="txtp1" name="Prompt1" class="custom-txt textarea-large">@Model?.Prompt1</textarea>
+                <span asp-validation-for="Prompt1" class="text-danger"></span>
+            </div>
+
+            <label class="custom-label">Prompt 2</label>
+            <div class="full-width">
+                <textarea id="txtp2" name="Prompt2" class="custom-txt textarea-large">@Model?.Prompt2</textarea>
+            </div>
+
+            <label class="custom-label">Prompt 3</label>
+            <div class="full-width">
+                <textarea id="txtp3" name="Prompt3" class="custom-txt textarea-large">@Model?.Prompt3</textarea>
+            </div>
+
+            <label class="custom-label">Min Length</label>
+            <input type="number" name="MinLength" class="custom-txt" value="@Model?.MinLength" />
+
+            <label class="custom-label">Max Length</label>
+            <input type="number" name="MaxLength" class="custom-txt" value="@Model?.MaxLength" />
+
+            <label class="custom-label">Min Prompt Msg</label>
+            <div class="input-group-custom">
+                <textarea id="txtMinMes" name="MinPromptText" class="custom-txt">@Model?.MinPromptText</textarea>
+                @* <button type="button" class="btn-autogen ajax-autogen" data-id="5">Auto Gen</button> *@
+                <a href="javascript:void(0);" class="ajax-autogen" data-id="5" title="Auto Generate">
+                    <img src="~/images/refresh.png" alt="Refresh" height="15px;" width="15px;" margin-left:10px; cursor:pointer; />
+                </a>
+            </div>
+
+            <label class="custom-label">Max Prompt Msg</label>
+            <div class="input-group-custom">
+                <textarea id="txtMaxmes" name="MaxPromptText" class="custom-txt">@Model?.MaxPromptText</textarea>
+                @* <button type="button" class="btn-autogen ajax-autogen" data-id="6">Auto Gen</button> *@
+                <a href="javascript:void(0);" class="ajax-autogen" data-id="6" title="Auto Generate">
+                    <img src="~/images/refresh.png" alt="Refresh" height="15px;" width="15px;" margin-left:10px; cursor:pointer; />
+                </a>
+            </div>
+
+            <label class="custom-label">English Language Prompt</label>
+            <div class="input-group-custom">
+                <textarea id="txtELP" name="EnglishLanguagePrompt" class="custom-txt">@Model?.EnglishLanguagePrompt</textarea>
+                @* <button type="button" class="btn-autogen ajax-autogen" data-id="5">Auto Gen</button> *@
+                <a href="javascript:void(0);" class="ajax-autogen" data-id="12" title="Auto Generate">
+                    <img src="~/images/refresh.png" alt="Refresh" height="15px;" width="15px;" margin-left:10px; cursor:pointer; />
+                </a>
+            </div>
+
+            <label class="custom-label">Other Language Prompt</label>
+            <div class="input-group-custom">
+                <textarea id="txtOLP" name="OtherLanguagePrompt" class="custom-txt">@Model?.OtherLanguagePrompt</textarea>
+                @* <button type="button" class="btn-autogen ajax-autogen" data-id="6">Auto Gen</button> *@
+                <a href="javascript:void(0);" class="ajax-autogen" data-id="13" title="Auto Generate">
+                    <img src="~/images/refresh.png" alt="Refresh" height="15px;" width="15px;" margin-left:10px; cursor:pointer; />
+                </a>
+            </div>
+
+            <label class="custom-label">End Prompt</label>
+            <div class="input-group-custom">
+                <textarea id="txtend" name="EndPrompt" class="custom-txt">@Model?.EndPrompt</textarea>
+                @* <button type="button" class="btn-autogen ajax-autogen" data-id="2">Auto Gen</button> *@
+                <a href="javascript:void(0);" class="ajax-autogen" data-id="2" title="Auto Generate">
+                    <img src="~/images/refresh.png" alt="Refresh" height="15px;" width="15px;" margin-left:10px; cursor:pointer; />
+                </a>
+            </div>
+
+            <label class="custom-label">Rating</label>
+            <select name="Rating" class="custom-select">
+                @for (int i = 10; i >= 1; i--)
+                {
+                    string label = "";
+                    if (i == 1) label = "(Worst)";
+                    if (i == 10) label = "(Best)";
+
+                    <option value="@i" selected="@(Model?.Rating == i.ToString())">
+                        @i @label
+                    </option>
+                }
+            </select>
+
+            @* <label class="custom-label">Final End Prompt</label>
+            <div class="input-group-custom">
+                <textarea id="txtfend" name="FinalEndPrompt" class="custom-txt">@Model?.FinalEndPrompt</textarea>
+                <a href="javascript:void(0);" class="ajax-autogen" data-id="2" title="Auto Generate">
+                    <img src="~/images/refresh.png" alt="Refresh" height="15px;" width="15px;" margin-left:10px; cursor:pointer; />
+                </a>
+            </div> *@
+
+            <label class="custom-label">End Prompt Message</label>
+            <div class="full-width input-group-custom">
+                <textarea id="txtfend" name="FinalEndPrompt" class="custom-txt">@Model?.FinalEndPrompt</textarea>
+                <a href="javascript:void(0);" class="ajax-autogen" data-id="9" title="Auto Generate">
+                    <img src="~/images/refresh.png" alt="Refresh" height="15px;" width="15px;" style="margin-left:10px; cursor:pointer;" />
+                </a>
+            </div>
+
+            <label class="custom-label">Merged Prompt</label>
+            <div class="full-width input-group-custom">
+                <textarea id="txtMerged" name="MergePrompt" readonly="readonly" class="custom-txt textarea-large1">@Model?.MergePrompt</textarea>
+                @*   <button type="button" class="btn-autogen ajax-autogen" data-id="7">Auto Gen</button> *@
+                <a href="javascript:void(0);" class="ajax-autogen" data-id="7" title="Auto Generate">
+                    <img src="~/images/refresh.png" alt="Refresh" height="15px;" width="15px;" margin-left:10px; cursor:pointer; />
+                </a>
+            </div>
+
+            <label class="custom-label">Final Prompt</label>
+            <div class="full-width input-group-custom">
+                <textarea id="txtFinal" name="FinalPrompt" class="custom-txt textarea-large1">@Model?.FinalPrompt</textarea>
+                @*  <button type="button" class="btn-autogen ajax-autogen" data-id="8">Auto Gen</button> *@
+                <a href="javascript:void(0);" class="ajax-autogen" data-id="8" title="Auto Generate">
+                    <img src="~/images/refresh.png" alt="Refresh" height="15px;" width="15px;" margin-left:10px; cursor:pointer; />
+                </a>
+            </div>
+
+                <label class="custom-label">Active</label>
+                <div class="input-group-custom">
+                <input type="checkbox" checked="checked" class="custom-select" asp-for="Active" />
+            </div>
+
+            <div class="button-container">
+                <button type="submit" class="btn btn-primary custom-btn btn-save">
+                    @(Model?.AutoID > 0 ? "Update Prompt" : "Save Prompt")
+                </button>
+
+                <a asp-action="Main" class="custom-btn btn-cancel">Cancel</a>
+            </div>
+        </div>
+    </div>
+</form>
+@if (TempData["Msg"] != null)
+{
+    <script>
+        window.onload = function(){
+            alert('@TempData["Msg"]');
+        }
+    </script>
+}
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".ajax-autogen").click(function (e) {
+            e.preventDefault();
+
+            var button = $(this);
+            var id = button.data("id"); // The Id (1-8) passed to AutoGen
+            var form = button.closest("form");
+
+            $.ajax({
+                url: '@Url.Action("AutoGen", "Main")?Id=' + id,
+                type: 'POST',
+                data: form.serialize(),
+                success: function (response) {
+                    if (response.initialPrompt) $("#txtinitial").val(response.initialPrompt);
+                    if (response.endPrompt) $("#txtend").val(response.endPrompt);
+                    if (response.positiveAttributes) $("#txtPA").val(response.positiveAttributes);
+                    if (response.negativeAttributes) $("#txtNA").val(response.negativeAttributes);
+                    if (response.minPromptText) $("#txtMinMes").val(response.minPromptText);
+                    if (response.maxPromptText) $("#txtMaxmes").val(response.maxPromptText);
+                    if (response.mergePrompt) $("#txtMerged").val(response.mergePrompt);
+                    if (response.finalPrompt) $("#txtFinal").val(response.finalPrompt);
+                    if (response.finalEndPrompt) $("#txtfend").val(response.finalEndPrompt);
+                    if (response.blockedPrompt) $("#txtBP").val(response.blockedPrompt);
+                    if (response.userIgnorePrompt) $("#txtUIP").val(response.userIgnorePrompt);
+                    if (response.englishLangPrompt) $("#txtELP").val(response.englishLangPrompt);
+                    if (response.otherLangPrompt) $("#txtOLP").val(response.otherLangPrompt);
+                },
+                error: function () {
+                    alert("Error generating prompt component.");
+                }
+            });
+        });
+    });
+</script>

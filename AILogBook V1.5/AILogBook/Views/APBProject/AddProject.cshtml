@@ -1,0 +1,280 @@
+﻿@model AILogBook.Models.Projects;
+@{
+    ViewData["Title"] = "Define Project";
+}
+
+<style>
+    :root {
+        --brand-purple: #8728E1;
+        --border-color: #dce0e4;
+        --text-dark: #444;
+        --bg-light: #fdfdfd;
+        --input-focus: rgba(135, 40, 225, 0.1);
+    }
+
+    /* Main container for the list */
+    .prompt-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin: 20px 0;
+    }
+
+    /* Grid for each row: Label on left (180px), Input on right */
+    .form-row {
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .custom-label {
+        font-weight: bold;
+        color: var(--text-dark);
+        font-size: 0.9rem;
+    }
+
+    .custom-select, .custom-txt {
+        width: 30%; /* Keeps inputs at 30% width of the remaining space */
+        padding: 10px 14px;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        font-size: 0.95rem;
+        outline: none;
+        transition: all 0.2s ease-in-out;
+        background-color: var(--bg-light);
+        color: #333;
+    }
+
+        .custom-select:focus, .custom-txt:focus {
+            border-color: var(--brand-purple);
+            box-shadow: 0 0 0 4px var(--input-focus);
+            background-color: #fff;
+        }
+
+    .button-container {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: flex-start;
+        gap: 16px;
+        margin-top: 32px;
+        padding-top: 24px;
+        border-top: 1px solid #eee;
+    }
+
+    .custom-btn {
+        padding: 12px 48px;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        text-decoration: none;
+    }
+
+    .btn-save {
+        background-color: var(--brand-purple);
+        color: white;
+    }
+
+    .btn-cancel {
+        background-color: #f8f9fa;
+        color: #666;
+        border: 1px solid #ddd;
+    }
+
+    /* --- Checkbox Styling --- */
+    input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        accent-color: #8728E1; /* Matches your brand color */
+        cursor: pointer;
+        margin: 0;
+    }
+
+    /* Container to hold both date inputs side-by-side */
+    .date-row-group {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    /* Specific fix for the Download row to keep button and input together */
+    .input-with-button {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+        /* Ensure inputs inside these groups don't shrink too much */
+        .date-row-group .custom-txt,
+        .input-with-button .custom-txt {
+            width: 200px; /* Fixed width works better for aligned groups */
+        }
+
+</style>
+
+<form asp-action="@(Model?.AutoId > 0 ? "EditProject" : "AddProject")" asp-controller="APBProject" method="post">
+    <input type="hidden" name="AutoId" value="@(Model?.AutoId ?? 0)" />
+    <div class="prompt-container">
+        <div class="form-row">
+            <label class="custom-label">Ai Model</label>
+            <select class="custom-select" name="Model_Id">
+                <option>--Select AI Model--</option>
+                @if (ViewBag.ModelList is List<AILogBook.Models.AIModel> ModelList)
+                {
+                    foreach (var item in ModelList)
+                    {
+                        <option value="@item.AutoId" selected="@(item.AutoId == Model?.Model_Id)">@item.AIName</option>
+                    }
+                }
+            </select>
+        </div>
+
+        <div class="form-row">
+            <label class="custom-label">Prompt ID</label>
+            <select class="custom-select" name="Prompt_Id">
+                <option>--Select Prompt Id--</option>
+                @if (ViewBag.PromptIds is List<AILogBook.Models.PromptList> PromptIds)
+                {
+                    foreach (var item in PromptIds)
+                    {
+                        <option value="@item.AutoID" selected="@(item.AutoID == Model?.Prompt_Id)">@item.PromptCategory</option>
+                    }
+                }
+            </select>
+        </div>
+
+        <div class="form-row">
+            <label class="custom-label">Project Key</label>
+            <input type="text" name="ProjectKey" id="txtProjectKey" class="custom-txt" readonly="readonly"  placeholder="Enter details" value="@ViewBag.ProjectKey" />
+        </div>
+
+        <div class="form-row">
+            <label class="custom-label">Project Code</label>
+            <input type="text" value="@Model?.Project_Code" name="Project_Code" class="custom-txt" placeholder="Enter project code " /> 
+        </div>
+
+        <div class="form-row">
+            <label class="custom-label">Date Range</label>
+            <div class="date-row-group">
+                <div>
+                    <input type="date" id="fromDate" name="From_Date" class="custom-txt"
+                           value="@(Model?.From_Date)" />
+                </div>
+                <span class="custom-label">to</span>
+                <div>
+                    <input type="date" id="toDate" name="To_Date" class="custom-txt"
+                           value="@(Model?.To_Date)" />
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <label class="custom-label">Active</label>
+            <input type="checkbox" name="Active" value="true" checked="checked" />
+        </div>
+
+
+        <div class="button-container">
+            <button type="submit" class="btn btn-primary custom-btn btn-save">Save</button>
+            <a asp-action="Project" asp-controller="APBProject" class="custom-btn btn-cancel">Cancel</a>
+        </div>
+    </div>
+</form>
+
+@* <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const fromInput = document.getElementById('fromDate');
+        const toInput = document.getElementById('toDate');
+
+        // 1. Set 'From Date' minimum to today
+        const today = new Date().toISOString().split('T')[0];
+        fromInput.setAttribute('min', today);
+        fromInput.value = today;
+
+        // Function to calculate +1 month
+        const updateToDate = (selectedDate) => {
+            let date = new Date(selectedDate);
+            if (isNaN(date)) return;
+
+            // Add 1 month
+            date.setMonth(date.getMonth() + 1);
+
+            // Format back to YYYY-MM-DD
+            const nextMonth = date.toISOString().split('T')[0];
+            toInput.value = nextMonth;
+            toInput.setAttribute('min', selectedDate); // 'To' cannot be before 'From'
+        };
+
+        // 2. Auto-set 'To Date' on page load based on today
+        updateToDate(today);
+
+        // 3. Update 'To Date' whenever 'From Date' changes
+        fromInput.addEventListener('change', function() {
+            updateToDate(this.value);
+        });
+    });
+</script> *@
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const fromInput = document.getElementById('fromDate');
+        const toInput = document.getElementById('toDate');
+
+        // format date to YYYY-MM-DD
+        const formatDate = (date) => date.toISOString().split('T')[0];
+
+        // Function to handle the "To Date" logic
+        const handleDateConstraints = (fromDateValue, isNewRecord) => {
+            if (!fromDateValue) return;
+
+            // Ensure "To Date" cannot be physically selected before "From Date"
+            toInput.setAttribute('min', fromDateValue);
+
+            if (isNewRecord) {
+                // Logic for Add New: Set To Date = From Date + 1 Month
+                let date = new Date(fromDateValue);
+                date.setMonth(date.getMonth() + 1);
+                toInput.value = formatDate(date);
+            } else {
+                // Logic for Edit: If user changes From Date to be AFTER the current To Date,
+                // fix the To Date so it's valid.
+                if (toInput.value && toInput.value < fromDateValue) {
+                    let date = new Date(fromDateValue);
+                    date.setMonth(date.getMonth() + 1);
+                    toInput.value = formatDate(date);
+                }
+            }
+        };
+
+        // --- INITIAL LOAD LOGIC ---
+        if (!fromInput.value) {
+            // 1. ADD NEW MODE: Field is empty
+            const today = new Date();
+            const todayStr = formatDate(today);
+
+            fromInput.value = todayStr;
+            handleDateConstraints(todayStr, true);
+        } else {
+            // 2. EDIT MODE: Field has database value
+            handleDateConstraints(fromInput.value, false);
+        }
+
+        // --- CHANGE EVENT ---
+        fromInput.addEventListener('change', function() {
+            // When manually changed, we treat it like an edit to avoid
+            // forcefully overwriting a To Date the user might want to keep
+            handleDateConstraints(this.value, false);
+        });
+    });
+
+</script>
+
+@if (TempData["Msg"] != null)
+{
+    <script>
+        window.onload = function(){
+            alert('@TempData["Msg"]');
+        }
+    </script>
+}
+

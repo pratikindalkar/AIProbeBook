@@ -1,0 +1,191 @@
+﻿ @{
+//     ViewData["Title"] = "Add Attribute";
+    ViewData["Title"] = Model?.AutoId > 0 ? "Edit Attribute" : "Add Attribute";
+}
+<style>
+    /* Container for each Label + Dropdown row */
+    .form-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        gap: 45px;
+        flex-wrap: wrap;
+    }
+
+    .custom-label {
+        min-width: 120px;
+        font-weight: bold;
+        white-space: nowrap;
+        color: #444;
+    }
+
+    .custom-select, .custom-txt {
+        flex: 1;
+        max-width: 250px;
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 0.95rem;
+        outline: none;
+        transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+        .custom-select:focus, .custom-txt:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+        }
+
+    .textarea-row {
+        align-items: flex-start;
+    }
+
+        .textarea-row .custom-label {
+            padding-top: 8px;
+        }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        margin-top: 30px;
+    }
+
+    .custom-btn {
+        background-color: #8728E1;
+        color: white;
+        /* min-width: 100px;  */
+        padding: 8px 30px;
+        border-radius: 8px;
+    }
+
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        margin-top: 30px;
+    }
+
+    .custom-btn {
+        background-color: #8728E1;
+        color: white;
+        /* min-width: 100px;  */
+        padding: 8px 30px;
+        border-radius: 8px;
+    }
+
+    /* --- Checkbox Styling --- */
+    input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        accent-color: #8728E1; /* Matches your brand color */
+        cursor: pointer;
+        margin: 0;
+    }
+
+    /* --- Button Styling --- */
+    .button-container {
+        display: flex;
+        justify-content: flex-start; /* Align with your input fields */
+        gap: 15px; /* Space between Save and Cancel */
+        width: 100%;
+        max-width: 415px; /* Matches label (120px) + gap (45px) + input (250px) */
+        margin-top: 30px;
+        padding-left: 165px; /* Aligns buttons under the textareas */
+    }
+
+    .custom-btn {
+        border: none;
+        padding: 10px 30px;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.2s ease;
+        cursor: pointer;
+    }
+
+    /* Save Button */
+    .btn-save {
+        background-color: #8728E1;
+        color: white;
+        box-shadow: 0 4px 12px rgba(135, 40, 225, 0.2);
+    }
+
+        .btn-save:hover {
+            background-color: #6a1eb3;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 15px rgba(135, 40, 225, 0.3);
+        }
+
+    /* Cancel Button */
+    .btn-cancel {
+        background-color: #f8f9fa;
+        color: #666;
+        border: 1px solid #ddd;
+    }
+
+        .btn-cancel:hover {
+            background-color: #e9ecef;
+            color: #333;
+        }
+</style>
+@model AILogBook.Models.Attributes
+
+<form asp-action="@(Model?.AutoId > 0 ? "EditAttribute" : "AddAttributes")" asp-controller="Home" method="post">
+
+    <input type="hidden" asp-for="AutoId" />
+
+    <div class="form-container">
+
+        <div class="form-row">
+            <label class="custom-label">Select Category</label>
+            <select asp-for="CategoryId" class="custom-select"
+                    asp-items="@(new SelectList(ViewBag.CateList, "AutoId", "CategoryName"))">
+                <option value="0">-- Select Category --</option>
+            </select>
+        </div>
+
+        <div class="form-row textarea-row">
+            <label class="custom-label">Attribute Name</label>
+            <textarea asp-for="Attribute" id="txtattriName" class="custom-txt" required></textarea>
+        </div>
+
+        <div class="form-row">
+            <label class="custom-label">Type</label>
+            <div style="display: flex; gap: 20px; align-items: center;">
+                <label style="font-weight: normal; cursor: pointer;">
+                    <input type="radio" asp-for="Type" value="Positive" checked="checked" style="accent-color: #8728E1;" /> Positive
+                </label>
+                <label style="font-weight: normal; cursor: pointer;">
+                    <input type="radio" asp-for="Type" value="Negative" style="accent-color: #8728E1;" /> Negative
+                </label>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <label class="custom-label">Active</label>
+            <input type="checkbox" asp-for="Active" checked="checked" id="chkActive" style="width:20px; height:20px;" />
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button type="submit" class="custom-btn btn-save">
+            @(Model?.AutoId > 0 ? "Update" : "Save")
+        </button>
+        <button type="button" class="custom-btn btn-cancel" onclick="window.location.href='@Url.Action("Attributes", "Home")'">Cancel</button>
+    </div>
+</form>
+@{
+    var msgList = ViewBag.messageList as List<string>;
+}
+
+@if (msgList != null && msgList.Count > 0)
+{
+    <script type="text/javascript">
+        window.onload = function() {
+            var message = "@Html.Raw(string.Join("\\n", msgList))";
+            alert(message);
+        };
+    </script>
+}

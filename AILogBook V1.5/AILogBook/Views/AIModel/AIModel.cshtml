@@ -1,0 +1,201 @@
+﻿@{
+    ViewData["Title"] = "AI Model";
+}
+<style>
+    .custom-label {
+        font-weight: bold;
+        white-space: nowrap;
+        color: #444;
+    }
+
+    /* GridView */
+    #myGrid thead th {
+        background-color: #8728E1 !important;
+        color: white !important;
+        border-color: #7221C1;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    .dataTables_scrollHead thead th {
+        background-color: #8728E1 !important;
+        color: white !important;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    .dataTables_scrollHead {
+        background-color: #8728E1 !important;
+    }
+
+    /* Card Base Styling */
+    .custom-card {
+        border: none;
+        border-radius: 15px;
+        background: #ffffff;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+
+
+        .custom-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(135, 40, 225, 0.1);
+        }
+
+    /* Borders for specific cards */
+    .border-purple {
+        border-bottom: 5px solid #8728E1 !important;
+    }
+
+    .border-green {
+        border-bottom: 5px solid #2ecc71 !important;
+    }
+
+    /* Stat Titles & Numbers */
+    .stat-title {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #888;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 10px;
+    }
+
+    .stat-number {
+        font-size: 2.2rem;
+        font-weight: 800;
+        margin-bottom: 0;
+    }
+
+    .text-purple {
+        color: #8728E1;
+    }
+
+    .text-green {
+        color: #2ecc71;
+    }
+</style>
+
+<div class="row justify-content-center g-4">
+    <div class="col-md-3">
+        <div class="card custom-card border-purple">
+            <div class="card-body text-center">
+                <h6 class="stat-title">Total AI Models</h6>
+                <h2 class="stat-number text-purple">@(ViewBag.TotalCount)</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card custom-card border-green">
+            <div class="card-body text-center">
+                <h6 class="stat-title">Total Active URLs</h6>
+                <h2 class="stat-number text-green">@(ViewBag.ActiveUrlCount)</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="d-flex justify-content-end mt-3 pe-2 gap-3">
+    <a asp-action="AddAIModel" asp-controller="AIModel" class="text-decoration-none" title="Add Model">
+        <img src="~/images/add.png" alt="Add" style="height:25px; width:25px;" />
+        <span class="custom-label" style="cursor:pointer;">AI</span>
+    </a>
+    <a asp-action="Download" asp-controller="AIModel" class="text-decoration-none">
+        <img src="~/images/excel.png" alt="Download" style="height:25px; width:25px;" />
+        <span class="custom-label" style="cursor:pointer;">Download</span>
+    </a>
+</div>
+<table id="myGrid" class="table table-striped table-hover mt-3 w-100">
+    <thead>
+        <tr>
+            <th>Edit</th>
+            <th>Delete</th>
+            <th>AutoID</th>
+            <th>AIName</th>
+            <th>APIUrl1</th>
+            <th>APIUrl2</th>
+            <th>APIUrl3</th>
+            <th>MetaData</th>
+            <th>API Key</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (ViewBag.modelList != null)
+        {
+            var result = ViewBag.modelList as List<AILogBook.Models.AIModel>;
+            for (int i = 0; i < result.Count; i++)
+            {
+                <tr>
+                    <td>
+                        <a asp-action="EditAIModel" asp-route-id="@result[i].AutoId" class="btn p-0" title="Edit Model">
+                            <img src="~/images/edit.png" style="height:30px; width:30px;" />
+                        </a>
+                    </td>
+                    <td>
+                        <a asp-action="DeleteAIModel" asp-controller="AIModel" asp-route-id="@result[i].AutoId" title="Delete Model"
+                           class="btn btn-sm btn-icon-only p-0" onclick="return confirm('Are you sure you want to delete this aiModel?');">
+                            <img src="~/images/delete.png" alt="Delete" style="height:30px; width:30px;" />
+                        </a>
+                    </td>
+                    <td>@result[i].AutoId</td>
+                    <td>@result[i].AIName</td>
+                    <td title="@result[i].APIUrl1">@(result[i].APIUrl1?.Length > 30 ? result[i].APIUrl1.Substring(0, 30) + "..." : result[i].APIUrl1)</td>
+                    <td title="@result[i].APIUrl2">@(result[i].APIUrl2?.Length > 30 ? result[i].APIUrl2.Substring(0, 30) + "..." : result[i].APIUrl2)</td>
+                    <td title="@result[i].APIUrl3">@(result[i].APIUrl3?.Length > 30 ? result[i].APIUrl3.Substring(0, 30) + "..." : result[i].APIUrl3)</td>
+                    <td title="@result[i].MetaData">@(result[i].MetaData?.Length > 30 ? result[i].MetaData.Substring(0, 30) + "..." : result[i].MetaData)</td>
+                    <td title="@result[i].APIKey">@(result[i].APIKey?.Length > 30 ? result[i].APIKey.Substring(0, 30) + "..." : result[i].APIKey)</td>
+
+                    @* <td>@result[i].APIUrl1</td>
+                    <td>@result[i].APIUrl2</td>
+                    <td>@result[i].APIUrl3</td>
+                    <td>@result[i].MetaData</td>
+                    <td>@result[i].APIKey</td> *@
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css" />
+
+    <script type="text/javascript">
+                        $(document).ready(function () {
+            var table = $('#myGrid').DataTable({
+                "paging": true,
+                "ordering": true,
+                "info": true,
+                "searching": true,
+                "pageLength": 25,
+                "scrollX": true,
+                "autoWidth": false,
+                "order": [[2, 'asc']], // <--- SET DEFAULT SORT TO AUTOID (Index 2)
+                "columnDefs": [
+                    {
+                        "orderable": false,
+                        "targets": [0, 1], // Disable sorting on Edit and Delete
+                        "width": "45px",
+                        "className": "text-center"
+                    }
+                ],
+                "language": {
+                    "emptyTable": "No records found matching your search."
+                }
+            });
+        });
+    </script>
+}
+@if (TempData["Msg"] != null)
+{
+    <script>
+        window.onload = function(){
+            alert("@TempData["Msg"]");
+        }
+    </script>
+}

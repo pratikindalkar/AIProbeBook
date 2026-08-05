@@ -1,0 +1,154 @@
+﻿@model AILogBook.Models.UserMasterDto
+@{
+    ViewData["Title"] = Model?.Auto_Id > 0 ? "Edit User" : "Add User";
+}
+
+<style>
+    /* Container for each Label + Dropdown row */
+    .form-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        gap: 45px;
+        flex-wrap: wrap;
+    }
+
+    .custom-label {
+        min-width: 120px;
+        font-weight: bold;
+        white-space: nowrap;
+        color: #444;
+    }
+    /* --- Checkbox Styling --- */
+    input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        accent-color: #8728E1; /* Matches your brand color */
+        cursor: pointer;
+        margin: 0;
+    }
+
+    /* .custom-select, .custom-txt {
+        flex: 1;
+        max-width: 250px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 0.95rem;
+        outline: none;
+        transition: border-color 0.2s, box-shadow 0.2s;
+    } */
+    .custom-select, .custom-txt {
+        flex: 1;
+        max-width: 350px;
+        /* width: 90%; */
+        padding: 10px 14px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        outline: none;
+        transition: all 0.2s ease-in-out;
+        background-color: var(--bg-light);
+        color: #333;
+    }
+
+        .custom-select:focus, .custom-txt:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+        }
+    /* Save Button */
+    .button-container {
+        display: flex;
+        justify-content: flex-start; /* Align with your input fields */
+        gap: 15px; /* Space between Save and Cancel */
+        width: 100%;
+        max-width: 415px; /* Matches label (120px) + gap (45px) + input (250px) */
+        margin-top: 30px;
+        padding-left: 165px; /* Aligns buttons under the textareas */
+    }
+
+    .custom-btn {
+        border: none;
+        padding: 10px 30px;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.2s ease;
+        cursor: pointer;
+    }
+
+
+    .btn-save {
+        background-color: #8728E1;
+        color: white;
+        box-shadow: 0 4px 12px rgba(135, 40, 225, 0.2);
+    }
+
+        .btn-save:hover {
+            background-color: #6a1eb3;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 15px rgba(135, 40, 225, 0.3);
+        }
+
+    /* Cancel Button */
+    .btn-cancel {
+        background-color: #f8f9fa;
+        color: #666;
+        border: 1px solid #ddd;
+    }
+
+        .btn-cancel:hover {
+            background-color: #e9ecef;
+            color: #333;
+        }
+</style>
+
+<form asp-action="@(Model?.Auto_Id > 0 ? "EditUser" : "AddUser")" method="post">
+    <input type="hidden" asp-for="Auto_Id" />
+
+    <div class="form-row">
+        <label class="custom-label">Login Name</label>
+        <input type="text" asp-for="Login_Name" class="custom-txt" placeholder="Enter username" required />
+        <span asp-validation-for="Login_Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-row">
+        <label class="custom-label">Password</label>
+        <input type="text" asp-for="User_Password" class="custom-txt" placeholder="Enter password" required />
+        <span asp-validation-for="User_Password" class="text-danger"></span>
+    </div>
+
+    <div class="form-row">
+        <label class="custom-label">User Type</label>
+        <select asp-for="Type" class="custom-select" required>
+            <option value="">-- Select Type --</option>
+            <option value="admin">Admin</option>
+            <option value="executive">Executive</option>
+            <option value="teamleader">Team Leader</option>
+        </select>
+        <span asp-validation-for="Type" class="text-danger"></span>
+    </div>
+
+    <div class="form-row">
+        <label class="custom-label">Level</label>
+        <input type="number" asp-for="Level" class="custom-txt" min="1" />
+        <span asp-validation-for="Level" class="text-danger"></span>
+    </div>
+
+    <div class="form-row">
+        <label class="custom-label">Active</label>
+        <input type="checkbox" asp-for="active" class="checkbox-input" />
+    </div>
+
+    <div class="button-container">
+        <button type="submit" class="custom-btn btn-save">Save</button>
+        <a asp-action="User" class="custom-btn btn-cancel">Cancel</a>
+    </div>
+</form>
+
+@if (TempData["Msg"] != null)
+{
+    <script>
+        window.onload = function(){
+            alert("@TempData["Msg"]");
+        }
+    </script>
+}

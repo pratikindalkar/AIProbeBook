@@ -1,0 +1,181 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = AILogBook
+build_property.RootNamespace = AILogBook
+build_property.ProjectDir = D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/AccessControl/Access.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNzQ29udHJvbFxBY2Nlc3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/AccessControl/AddUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNzQ29udHJvbFxBZGRVc2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/AccessControl/Master.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNzQ29udHJvbFxNYXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/AccessControl/User.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNzQ29udHJvbFxVc2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/AiChat/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWlDaGF0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/AIModel/AddAIModel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQUlNb2RlbFxBZGRBSU1vZGVsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/AIModel/AIModel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQUlNb2RlbFxBSU1vZGVsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/APBProject/AddProject.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQVBCUHJvamVjdFxBZGRQcm9qZWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/APBProject/Project.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQVBCUHJvamVjdFxQcm9qZWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/Attribute/AddAttribute.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0cmlidXRlXEFkZEF0dHJpYnV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/Attribute/AddMultiAttribute.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0cmlidXRlXEFkZE11bHRpQXR0cmlidXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/Attribute/Attributes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0cmlidXRlXEF0dHJpYnV0ZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/Category/AddCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQWRkQ2F0ZWdvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/Category/Categories.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ2F0ZWdvcmllcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/ChatTheme/AddTheme.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhdFRoZW1lXEFkZFRoZW1lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/ChatTheme/ChatTheme.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhdFRoZW1lXENoYXRUaGVtZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/ChatWindowSetting/ChatWindow.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhdFdpbmRvd1NldHRpbmdcQ2hhdFdpbmRvdy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/Home/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFcnJvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/Home/xxAddAIModel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVx4eEFkZEFJTW9kZWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/Home/xxAddAttributes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVx4eEFkZEF0dHJpYnV0ZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/Home/xxAddCategories.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVx4eEFkZENhdGVnb3JpZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/Home/xxAIModel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVx4eEFJTW9kZWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/Home/xxAttributes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVx4eEF0dHJpYnV0ZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/Home/xxCategories.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVx4eENhdGVnb3JpZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/Home/xxIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVx4eEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/Home/xxPromptView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVx4eFByb21wdFZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/Login/SignIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cU2lnbkluLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/Login/SignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cU2lnblVwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/Main/Main.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxNYWluLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/Main/PromptView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxQcm9tcHRWaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/Topic/AddTopic.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9waWNcQWRkVG9waWMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/Topic/Topic.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9waWNcVG9waWMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/UserLog/ChatConversation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckxvZ1xDaGF0Q29udmVyc2F0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/UserLog/ChatSession.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckxvZ1xDaGF0U2Vzc2lvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/UserLog/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckxvZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Pratik/Project 2022/AI Log Book/Old/AILogBook V1.5/AILogBook/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-lg81v76570

@@ -1,0 +1,293 @@
+﻿@model AILogBook.Models.ChatSettings;
+@{
+    ViewData["Title"] = "Theme";
+}
+
+<style>
+
+    /* Grid Layout for rows */
+    .form-group-row {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        align-items: center;
+        margin-bottom: 18px;
+        gap: 20px;
+    }
+
+    .custom-label {
+        min-width: 120px;
+        font-weight: bold;
+        white-space: nowrap;
+        color: #444;
+    }
+
+    /* Input Styling */
+    .custom-input {
+        width: 60%;
+        padding: 10px 15px;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        background-color: #f8f9fa;
+    }
+
+        .custom-input:focus {
+            border-color: #8728E1;
+            background-color: #fff;
+            box-shadow: 0 0 0 4px rgba(135, 40, 225, 0.1);
+            outline: none;
+        }
+
+    textarea.custom-input {
+        min-height: 60px;
+        width: 60%;
+        resize: vertical;
+    }
+
+    /* File Input Specifics */
+    input[type="file"].custom-input {
+        padding: 7px;
+        width: 60%;
+    }
+    /* Save Button */
+    .button-container {
+        display: flex;
+        justify-content: flex-start;
+        gap: 15px;
+        width: 100%;
+        max-width: 415px;
+        margin-top: 30px;
+        padding-left: 165px;
+    }
+
+    .custom-btn {
+        border: none;
+        padding: 10px 30px;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.2s ease;
+        cursor: pointer;
+    }
+
+
+    .btn-save {
+        background-color: #8728E1;
+        color: white;
+        box-shadow: 0 4px 12px rgba(135, 40, 225, 0.2);
+    }
+
+        .btn-save:hover {
+            background-color: #6a1eb3;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 15px rgba(135, 40, 225, 0.3);
+        }
+
+    /* Cancel Button */
+    .btn-cancel {
+        background-color: #f8f9fa;
+        color: #666;
+        border: 1px solid #ddd;
+    }
+
+        .btn-cancel:hover {
+            background-color: #e9ecef;
+            color: #333;
+        }
+
+    /* --- Checkbox Styling --- */
+    input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        accent-color: #8728E1;
+        cursor: pointer;
+        margin: 0;
+    }
+
+    /* Add this to your <style> block */
+    .img-preview {
+        display: none; /* Hide images by default */
+        height: 35px;
+        width: 35px;
+        object-fit: cover;
+    }
+</style>
+<form asp-action="@(Model?.AutoId > 0 ? "EditTheme" : "AddTheme")" method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="AutoId" />
+
+    <input type="hidden" asp-for="VKSLogofile" />
+    <input type="hidden" asp-for="AI_Icon" />
+    <input type="hidden" asp-for="Resp_Icon" />
+    <input type="hidden" asp-for="Background_Img" />
+
+    <div class="form-group-row">
+        <label class="custom-label">Theme Color</label>
+        <div class="d-flex align-items-center gap-2">
+            <input type="color" asp-for="ThemeName" class="custom-input" style="width: 60px; height: 40px; padding: 2px;" />
+        </div>
+    </div>
+
+    <div class="form-group-row">
+        <label class="custom-label">Chat Title</label>
+        <textarea asp-for="ChatTitle" class="custom-input" style="height: 40px"></textarea>
+    </div>
+    @* VKS Logo Row *@
+    <div class="form-group-row">
+        <label class="custom-label">VKS Logo</label>
+        <div class="d-flex align-items-center gap-3">
+            <input type="file" name="VKSLogoUpload" class="custom-input" style="width: 250px;" accept="image/*" onchange="previewImage(this, 'previewVKS')" />
+            <img id="previewVKS" class="img-preview"
+                 src="@(Model?.AutoId > 0 ? Url.Content(Model.VKSLogofile) : "")"
+                 style="@(Model?.AutoId > 0 && !string.IsNullOrEmpty(Model.VKSLogofile) ? "display:block;" : "display:none;")" />
+        </div>
+    </div>
+
+    @* AI Icon Row *@
+    <div class="form-group-row">
+        <label class="custom-label">AI Icon</label>
+        <div class="d-flex align-items-center gap-3">
+            <input type="file" name="AIIconUpload" class="custom-input" style="width: 250px;" accept="image/*" onchange="previewImage(this, 'previewAI')" />
+            <img id="previewAI" class="img-preview"
+                 src="@(Model?.AutoId > 0 ? Url.Content(Model.AI_Icon) : "")"
+                 style="@(Model?.AutoId > 0 && !string.IsNullOrEmpty(Model.AI_Icon) ? "display:block;" : "display:none;")" />
+        </div>
+    </div>
+
+    @* Respondent Icon Row *@
+    <div class="form-group-row">
+        <label class="custom-label">Respondent Icon</label>
+        <div class="d-flex align-items-center gap-3">
+            <input type="file" name="RespIconUpload" class="custom-input" style="width: 250px;" accept="image/*" onchange="previewImage(this, 'previewResp')" />
+            <img id="previewResp" class="img-preview"
+                 src="@(Model?.AutoId > 0 ? Url.Content(Model.Resp_Icon) : "")"
+                 style="@(Model?.AutoId > 0 && !string.IsNullOrEmpty(Model.Resp_Icon) ? "display:block;" : "display:none;")" />
+        </div>
+    </div>
+
+    @* Background Image Row *@
+    <div class="form-group-row">
+        <label class="custom-label">Background Img</label>
+        <div class="d-flex align-items-center gap-3">
+            <input type="file" name="BackgroundUpload" class="custom-input" style="width: 250px;" accept="image/*" onchange="previewImage(this, 'previewBG')" />
+            <img id="previewBG" class="img-preview"
+                 src="@(Model?.AutoId > 0 ? Url.Content(Model.Background_Img) : "")"
+                 style="@(Model?.AutoId > 0 && !string.IsNullOrEmpty(Model.Background_Img) ? "display:block;" : "display:none;")" />
+        </div>
+    </div>
+    @*     <div class="form-group-row">
+        <label class="custom-label">VKS Logo</label>
+        <div class="d-flex align-items-center gap-3">
+            <input type="file" name="VKSLogoUpload" class="custom-input" style="width: 250px;" accept="image/*" onchange="previewImage(this, 'previewVKS', 'nameVKS')" />
+            <div>
+                <span id="nameVKS" class="small text-muted px-2"></span>
+                <img id="previewVKS"
+                     src="@(!string.IsNullOrEmpty(Model.VKSLogofile))"
+                     style="height:35px; width:35px; object-fit:cover;"
+                     onerror="this.onerror=null; this.src='@Url.Content("~/images/VKS.png")';" />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group-row">
+        <label class="custom-label">AI Icon</label>
+        <div class="d-flex align-items-center gap-3">
+            <input type="file" name="AIIconUpload" class="custom-input" style="width: 250px;" accept="image/*" onchange="previewImage(this, 'previewAI', 'nameAI')" />
+            <div>
+                <span id="nameAI" class="small text-muted px-2"></span>
+                <img id="previewAI"
+                     src="@(!string.IsNullOrEmpty(Model.AI_Icon))"
+                     style="height:35px; width:35px; object-fit:cover;"
+                     onerror="this.onerror=null; this.src='@Url.Content("~/images/AI.png")';" />
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group-row">
+        <label class="custom-label">Respondent Icon</label>
+        <div class="d-flex align-items-center gap-3">
+            <input type="file" name="RespIconUpload" class="custom-input" style="width: 250px;" accept="image/*"
+                   onchange="previewImage(this, 'previewResp', 'nameResp')" />
+            <div>
+                <span id="nameResp" class="small text-muted px-2"></span>
+                <img id="previewResp"
+                     src="@(!string.IsNullOrEmpty(Model.Resp_Icon))"
+                     style="height:35px; width:35px; object-fit:cover;"
+                     onerror="this.onerror=null; this.src='@Url.Content("~/images/Resp.png")';" />
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group-row">
+        <label class="custom-label">Background Img</label>
+        <div class="d-flex align-items-center gap-3">
+            <input type="file" name="BackgroundUpload" class="custom-input" style="width: 250px;" accept="image/*"
+                   onchange="previewImage(this, 'previewBG', 'nameBG')" />
+            <div>
+                <span id="nameBG" class="small text-muted px-2"></span>
+                <img id="previewBG"
+                     src="@(!string.IsNullOrEmpty(Model.Background_Img))"
+                     style="height:35px; width:35px; object-fit:cover;"
+                     onerror="this.onerror=null; this.src='@Url.Content("~/images/bgimg.png")';" />
+            </div>
+
+        </div>
+    </div> *@
+    <div class="form-group-row">
+        <label class="custom-label">Chat Wait Timer</label>
+        <input type="number" asp-for="ChatWaitTimer" class="custom-input" />
+    </div>
+
+    <div class="form-group-row">
+        <label class="custom-label">isTimer</label>
+        <input type="checkbox" asp-for="isTimer" />
+    </div>
+    <div class="form-group-row">
+        <label class="custom-label">Active</label>
+        <input type="checkbox" checked="checked" asp-for="Active" />
+    </div>
+
+    <div class="button-container">
+        <button type="submit" class="custom-btn btn-save">Save</button>
+        <a asp-action="ChatTheme" class="custom-btn btn-cancel">Cancel</a>
+    </div>
+</form>
+
+
+@if (TempData["Msg"] != null)
+{
+    <script>
+        window.onload = function(){
+            alert("@TempData["Msg"]");
+        }
+    </script>
+}
+
+<script>
+    // function previewImage(input, previewId, spanId) {
+    //     if (input.files && input.files[0]) {
+    //         document.getElementById(spanId).innerText = "";
+
+    //         var reader = new FileReader();
+    //         reader.onload = function (e) {
+    //             document.getElementById(previewId).src = e.target.result;
+    //         };
+    //         reader.readAsDataURL(input.files[0]);
+    //     }
+    // }
+
+</script>
+<script>
+    function previewImage(input, previewId) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var img = document.getElementById(previewId);
+                img.src = e.target.result;
+                img.style.display = "block"; // Make visible after selection
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>

@@ -1,0 +1,292 @@
+﻿@{
+	ViewData["Title"] = "SignUp";
+}
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    /*.header{
+        width : 100%;
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .section {
+        width: 60%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction:column;
+    }
+    */
+    .error-text {
+        color: red;
+        font-size: 12px;
+    }
+
+    .btnSubmit {
+        background-color: #7f00b2;
+        color: #fefefe;
+        width: 200px;
+        height: 30px;
+        border-radius: 10%;
+    }
+
+    .input-group {
+        position: relative;
+        margin-bottom: 15px;
+    }
+
+        /* Icon inside input */
+        .input-group i {
+            position: absolute;
+            left: 0;
+            bottom: 8px; /* aligns with underline */
+            font-size: 16px;
+            color: #888;
+        }
+        /* Left icon (lock) */
+        .input-group .left-icon {
+            position: absolute;
+            left: 0;
+            bottom: 8px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* Right icon (eye) */
+        .input-group .right-icon {
+            position: absolute;
+            right: 0;
+            bottom: 8px;
+            font-size: 14px;
+            color: #888;
+            cursor: pointer;
+        }
+    /* Input styling */
+    .underline-input {
+        width: 100%;
+        border: none;
+        border-bottom: 1.5px solid #ccc;
+        padding: 8px 0 6px 22px; /* space for icon */
+        outline: none;
+        font-size: 14px;
+        background: transparent;
+        transition: 0.2s ease;
+    }
+
+        /* Focus effect */
+        .underline-input:focus {
+            border-bottom: 2px solid #7f00b2;
+        }
+
+        /* Error */
+        .underline-input.error {
+            border-bottom: 2px solid #dc3545;
+        }
+        }
+</style>
+<div class="header w-100 vh-100 d-flex align-items-center justify-content-center">
+	<div class="section w-50 h-auto d-flex align-items-center justify-content-center flex-column border-1 shadow-lg p-4 bg-white rounded">
+		<form asp-action="Create" method="post">
+			<h2>Sign Up</h2>
+			<div class="info mb-3">
+				<label for="Login_Name">Username</label>
+				<div class="d-flex">
+					<span class="icon"><i class="fa-regular fa-user"></i></span><input type="text" id="Login_Name" class="underline-input" name="Login_Name" />
+				</div>
+				<small id="usernameError" class="error-text"></small>
+           </div>
+			<div class="info mb-3">
+				<label for="typeInput">User Type</label>
+				<div class="d-flex">
+					<span class="icon"><i class="fa-regular fa-id-card"></i></span>
+					<select id="typeInput" name="Type" class="form-select" required>
+						<option value="">Not Selected</option>
+						<option value="admin">Admin</option>
+						<option value="executive">Executive</option>
+						<option value="teamleader">Team Leader</option>
+					</select>
+				</div>
+				<small id="typeError" class="error-text"></small>
+				@*                 <span class="icon"><i class="fa-regular fa-user"></i></span><input type="text" id="Login_Name" class="underline-input" name="username" />
+ *@            </div>
+			<div class="info mb-3">
+				<label for="User_Password">Password</label>
+				<div class="d-flex">
+					<span><i class="fa-solid fa-lock"></i></span><input type="password" id="password" class="underline-input" name="User_Password" /><i class="fa-solid fa-eye" id="togglePassword1"></i>
+				</div>
+				<small id="passwordError" class="error-text"></small>
+				@*                 <span><i class="fa-solid fa-lock"></i></span><input type="password" id="password" class="underline-input" name="password" /><i class="fa-solid fa-eye" id="togglePassword"></i>
+ *@            </div>
+			<div class="info mb-3">
+				<label for="cpassword">Confirm Password</label>
+				<div class="d-flex">
+					<span><i class="fa-solid fa-lock"></i></span><input type="password" id="cpassword" class="underline-input" name="cpassword" /><i class="fa-solid fa-eye" id="togglePassword2"></i>
+				</div>
+				<small id="cpasswordError" class="error-text"></small>
+				@*                 <span><i class="fa-solid fa-lock"></i></span><input type="password" id="cpassword" class="underline-input" name="cpassword" />
+ *@            </div>
+			<div class="info mb-3">
+				<p>
+					Already have an account?
+                    <a asp-controller="Login" asp-action="Signin">Sign In</a>
+@* 					<a href="SignUp/Signin">Sign In</a>
+ *@				</p>
+            </div>
+
+			<div>
+				<button type="button" class="btnSubmit">Cancel</button>
+				<button type="submit" class="btnSubmit" onclick="return checkPass()">Save</button>
+			</div>
+		</form>
+	</div>
+	@* @if (TempData["Error"] != null)
+	{
+		<script>
+			alert('@TempData["Error"]');
+		</script>
+	} *@
+	@* <script src="~/js/Signup.js"></script> *@
+	<script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var message = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(TempData["Error"] ?? ""));
+
+            if (message && message !== "") {
+                Swal.fire({
+                    icon: 'error',
+                    title: message,
+                    showConfirmButton: false,
+                    timer: 3000
+                });
+            }
+            const usernameInput = document.getElementById("Login_Name");
+            const typeInput = document.getElementById("typeInput");
+            const passwordInput = document.getElementById("password");
+            const passwordInput2 = document.getElementById("cpassword");
+
+            const togglePassword = document.getElementById("togglePassword1");
+            const togglePassword2 = document.getElementById("togglePassword2");
+
+            let errorText = "";
+
+            loadSavedData();
+
+            [usernameInput, typeInput, passwordInput, passwordInput2].forEach(input => {
+                input.addEventListener("input", saveData);
+            });
+
+            function saveData() {
+                sessionStorage.setItem("signupData", JSON.stringify({
+                    username: usernameInput.value,
+                    type: typeInput.value,
+                    password: passwordInput.value,
+                    cpassword: passwordInput2.value
+                }));
+            }
+            function loadSavedData() {
+                const data = JSON.parse(sessionStorage.getItem("signupData"));
+                if (data) {
+                    usernameInput.value = data.username || "";
+                    typeInput.value = data.type || "";
+                    passwordInput.value = "";
+                    passwordInput2.value = "";
+                    delete data.password;
+                    delete data.cpassword;
+                    // passwordInput.value = data.password || "";
+                    // passwordInput2.value = data.cpassword || "";
+                     sessionStorage.setItem("signupData", JSON.stringify(data));
+                }
+            }
+
+            function clearSavedData() {
+                sessionStorage.removeItem("signupData");
+            }
+
+            togglePassword.addEventListener("click", function () {
+                passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+                this.classList.toggle("fa-eye-slash");
+            });
+
+            togglePassword2.addEventListener("click", function () {
+                passwordInput2.type = passwordInput2.type === "password" ? "text" : "password";
+                this.classList.toggle("fa-eye-slash");
+            });
+
+            window.checkPass = function () {
+                const username = usernameInput.value;
+                const password = passwordInput.value;
+                const cpassword = passwordInput2.value;
+                const typeInp = typeInput.value;
+
+                if (username === "" || password === "" || cpassword === "" || typeInp === "") {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'All fields are required'
+                    });
+                    return false;
+                }
+
+                if (password !== cpassword) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Passwords do not match'
+                    });
+                    return false;
+                }
+                clearSavedData();
+
+                return true;
+            };
+            usernameInput.addEventListener("blur", function () {
+                errorText = document.getElementById("usernameError");
+                if (usernameInput.value.trim() === "") {
+                    usernameInput.classList.add("error");
+                    errorText.textContent = "Username is required";
+                } else {
+                    usernameInput.classList.remove("error");
+                    errorText.textContent = "";
+                }
+            });
+
+            typeInput.addEventListener("blur", function () {
+                errorText = document.getElementById("typeError");
+                if (typeInput.value === "") {
+                    typeInput.classList.add("error");
+                    errorText.textContent = "Type is required";
+                } else {
+                    typeInput.classList.remove("error");
+                    errorText.textContent = "";
+                }
+            });
+
+            passwordInput.addEventListener("blur", function () {
+                errorText = document.getElementById("passwordError");
+                if (passwordInput.value.trim() === "") {
+                    passwordInput.classList.add("error");
+                    errorText.textContent = "Password is required";
+                } else {
+                    passwordInput.classList.remove("error");
+                    errorText.textContent = "";
+                }
+            });
+
+            passwordInput2.addEventListener("blur", function () {
+                errorText = document.getElementById("cpasswordError");
+                if (passwordInput2.value.trim() === "") {
+                    passwordInput2.classList.add("error");
+                    errorText.textContent = "Confirm Password is required";
+                } else {
+                    passwordInput2.classList.remove("error");
+                    errorText.textContent = "";
+                }
+            });
+
+        });
+	</script>
+</div>

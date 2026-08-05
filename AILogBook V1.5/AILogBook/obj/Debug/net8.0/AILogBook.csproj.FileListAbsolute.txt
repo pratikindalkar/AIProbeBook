@@ -1,0 +1,330 @@
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook\AILogBook\bin\Debug\net8.0\appsettings.Development.json
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook\AILogBook\bin\Debug\net8.0\appsettings.json
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook\AILogBook\bin\Debug\net8.0\AILogBook.staticwebassets.runtime.json
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook\AILogBook\bin\Debug\net8.0\AILogBook.staticwebassets.endpoints.json
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook\AILogBook\bin\Debug\net8.0\AILogBook.exe
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook\AILogBook\bin\Debug\net8.0\AILogBook.deps.json
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook\AILogBook\bin\Debug\net8.0\AILogBook.runtimeconfig.json
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook\AILogBook\bin\Debug\net8.0\AILogBook.dll
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook\AILogBook\bin\Debug\net8.0\AILogBook.pdb
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook\AILogBook\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook\AILogBook\obj\Debug\net8.0\AILogBook.GeneratedMSBuildEditorConfig.editorconfig
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook\AILogBook\obj\Debug\net8.0\AILogBook.AssemblyInfoInputs.cache
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook\AILogBook\obj\Debug\net8.0\AILogBook.AssemblyInfo.cs
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook\AILogBook\obj\Debug\net8.0\AILogBook.csproj.CoreCompileInputs.cache
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook\AILogBook\obj\Debug\net8.0\AILogBook.MvcApplicationPartsAssemblyInfo.cache
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook\AILogBook\obj\Debug\net8.0\AILogBook.RazorAssemblyInfo.cache
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook\AILogBook\obj\Debug\net8.0\AILogBook.RazorAssemblyInfo.cs
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook\AILogBook\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook\AILogBook\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook\AILogBook\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook\AILogBook\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook\AILogBook\obj\Debug\net8.0\scopedcss\bundle\AILogBook.styles.css
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook\AILogBook\obj\Debug\net8.0\scopedcss\projectbundle\AILogBook.bundle.scp.css
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook\AILogBook\obj\Debug\net8.0\staticwebassets.build.json
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook\AILogBook\obj\Debug\net8.0\staticwebassets.build.json.cache
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook\AILogBook\obj\Debug\net8.0\staticwebassets.development.json
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook\AILogBook\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook\AILogBook\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook\AILogBook\obj\Debug\net8.0\AILogBook.dll
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook\AILogBook\obj\Debug\net8.0\refint\AILogBook.dll
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook\AILogBook\obj\Debug\net8.0\AILogBook.pdb
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook\AILogBook\obj\Debug\net8.0\AILogBook.genruntimeconfig.cache
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook\AILogBook\obj\Debug\net8.0\ref\AILogBook.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\bin\Debug\net8.0\appsettings.Development.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\bin\Debug\net8.0\AILogBook.staticwebassets.endpoints.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\bin\Debug\net8.0\appsettings.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\bin\Debug\net8.0\AILogBook.staticwebassets.runtime.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\bin\Debug\net8.0\AILogBook.exe
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\bin\Debug\net8.0\AILogBook.deps.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\bin\Debug\net8.0\AILogBook.runtimeconfig.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\bin\Debug\net8.0\AILogBook.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\bin\Debug\net8.0\AILogBook.pdb
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\obj\Debug\net8.0\AILogBook.csproj.AssemblyReference.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\obj\Debug\net8.0\AILogBook.GeneratedMSBuildEditorConfig.editorconfig
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\obj\Debug\net8.0\AILogBook.AssemblyInfoInputs.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\obj\Debug\net8.0\AILogBook.AssemblyInfo.cs
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\obj\Debug\net8.0\AILogBook.csproj.CoreCompileInputs.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\obj\Debug\net8.0\AILogBook.MvcApplicationPartsAssemblyInfo.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\obj\Debug\net8.0\AILogBook.RazorAssemblyInfo.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\obj\Debug\net8.0\AILogBook.RazorAssemblyInfo.cs
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\obj\Debug\net8.0\scopedcss\bundle\AILogBook.styles.css
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\obj\Debug\net8.0\scopedcss\projectbundle\AILogBook.bundle.scp.css
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\obj\Debug\net8.0\staticwebassets.build.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\obj\Debug\net8.0\staticwebassets.build.json.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\obj\Debug\net8.0\staticwebassets.development.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\obj\Debug\net8.0\AILogBook.csproj.Up2Date
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\obj\Debug\net8.0\AILogBook.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\obj\Debug\net8.0\refint\AILogBook.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\obj\Debug\net8.0\AILogBook.pdb
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\obj\Debug\net8.0\AILogBook.genruntimeconfig.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook\AILogBook\obj\Debug\net8.0\ref\AILogBook.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\bin\Debug\net8.0\appsettings.Development.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\bin\Debug\net8.0\appsettings.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\bin\Debug\net8.0\AILogBook.staticwebassets.endpoints.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\bin\Debug\net8.0\AILogBook.staticwebassets.runtime.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\bin\Debug\net8.0\AILogBook.exe
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\bin\Debug\net8.0\AILogBook.deps.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\bin\Debug\net8.0\AILogBook.runtimeconfig.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\bin\Debug\net8.0\AILogBook.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\bin\Debug\net8.0\AILogBook.pdb
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Debug\net8.0\AILogBook.csproj.AssemblyReference.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Debug\net8.0\AILogBook.GeneratedMSBuildEditorConfig.editorconfig
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Debug\net8.0\AILogBook.AssemblyInfoInputs.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Debug\net8.0\AILogBook.AssemblyInfo.cs
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Debug\net8.0\AILogBook.csproj.CoreCompileInputs.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Debug\net8.0\AILogBook.MvcApplicationPartsAssemblyInfo.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Debug\net8.0\AILogBook.RazorAssemblyInfo.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Debug\net8.0\AILogBook.RazorAssemblyInfo.cs
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Debug\net8.0\scopedcss\bundle\AILogBook.styles.css
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Debug\net8.0\scopedcss\projectbundle\AILogBook.bundle.scp.css
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Debug\net8.0\staticwebassets.build.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Debug\net8.0\staticwebassets.build.json.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Debug\net8.0\staticwebassets.development.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Debug\net8.0\AILogBook.csproj.Up2Date
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Debug\net8.0\AILogBook.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Debug\net8.0\refint\AILogBook.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Debug\net8.0\AILogBook.pdb
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Debug\net8.0\AILogBook.genruntimeconfig.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Debug\net8.0\ref\AILogBook.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\bin\Debug\net8.0\ClosedXML.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\bin\Debug\net8.0\ClosedXML.Parser.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\bin\Debug\net8.0\DocumentFormat.OpenXml.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\bin\Debug\net8.0\DocumentFormat.OpenXml.Framework.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\bin\Debug\net8.0\ExcelNumberFormat.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\bin\Debug\net8.0\RBush.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\bin\Debug\net8.0\SixLabors.Fonts.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\bin\Debug\net8.0\System.IO.Packaging.dll
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\bin\Debug\net8.0\appsettings.Development.json
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\bin\Debug\net8.0\appsettings.json
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\bin\Debug\net8.0\AILogBook.staticwebassets.endpoints.json
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\bin\Debug\net8.0\AILogBook.staticwebassets.runtime.json
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\bin\Debug\net8.0\AILogBook.exe
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\bin\Debug\net8.0\AILogBook.deps.json
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\bin\Debug\net8.0\AILogBook.runtimeconfig.json
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\bin\Debug\net8.0\AILogBook.dll
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\bin\Debug\net8.0\AILogBook.pdb
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\bin\Debug\net8.0\ClosedXML.dll
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\bin\Debug\net8.0\ClosedXML.Parser.dll
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\bin\Debug\net8.0\DocumentFormat.OpenXml.dll
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\bin\Debug\net8.0\DocumentFormat.OpenXml.Framework.dll
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\bin\Debug\net8.0\ExcelNumberFormat.dll
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\bin\Debug\net8.0\RBush.dll
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\bin\Debug\net8.0\SixLabors.Fonts.dll
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\bin\Debug\net8.0\System.IO.Packaging.dll
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\obj\Debug\net8.0\AILogBook.csproj.AssemblyReference.cache
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\obj\Debug\net8.0\AILogBook.GeneratedMSBuildEditorConfig.editorconfig
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\obj\Debug\net8.0\AILogBook.AssemblyInfoInputs.cache
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\obj\Debug\net8.0\AILogBook.AssemblyInfo.cs
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\obj\Debug\net8.0\AILogBook.csproj.CoreCompileInputs.cache
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\obj\Debug\net8.0\AILogBook.MvcApplicationPartsAssemblyInfo.cache
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\obj\Debug\net8.0\AILogBook.RazorAssemblyInfo.cache
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\obj\Debug\net8.0\AILogBook.RazorAssemblyInfo.cs
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\obj\Debug\net8.0\scopedcss\bundle\AILogBook.styles.css
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\obj\Debug\net8.0\scopedcss\projectbundle\AILogBook.bundle.scp.css
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\obj\Debug\net8.0\staticwebassets.build.json
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\obj\Debug\net8.0\staticwebassets.build.json.cache
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\obj\Debug\net8.0\staticwebassets.development.json
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\obj\Debug\net8.0\AILogBook.csproj.Up2Date
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\obj\Debug\net8.0\AILogBook.dll
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\obj\Debug\net8.0\refint\AILogBook.dll
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\obj\Debug\net8.0\AILogBook.pdb
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\obj\Debug\net8.0\AILogBook.genruntimeconfig.cache
+D:\Pratik\Project 2022\AI Log Book\New folder\AILogBook V1.0\AILogBook\obj\Debug\net8.0\ref\AILogBook.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.0\AILogBook\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\bin\Debug\net8.0\appsettings.Development.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\bin\Debug\net8.0\appsettings.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\bin\Debug\net8.0\AILogBook.staticwebassets.endpoints.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\bin\Debug\net8.0\AILogBook.staticwebassets.runtime.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\bin\Debug\net8.0\AILogBook.exe
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\bin\Debug\net8.0\AILogBook.deps.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\bin\Debug\net8.0\AILogBook.runtimeconfig.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\bin\Debug\net8.0\AILogBook.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\bin\Debug\net8.0\AILogBook.pdb
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\bin\Debug\net8.0\ClosedXML.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\bin\Debug\net8.0\ClosedXML.Parser.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\bin\Debug\net8.0\DocumentFormat.OpenXml.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\bin\Debug\net8.0\DocumentFormat.OpenXml.Framework.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\bin\Debug\net8.0\ExcelNumberFormat.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\bin\Debug\net8.0\RBush.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\bin\Debug\net8.0\SixLabors.Fonts.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\bin\Debug\net8.0\System.IO.Packaging.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\obj\Debug\net8.0\AILogBook.csproj.AssemblyReference.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\obj\Debug\net8.0\AILogBook.GeneratedMSBuildEditorConfig.editorconfig
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\obj\Debug\net8.0\AILogBook.AssemblyInfoInputs.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\obj\Debug\net8.0\AILogBook.AssemblyInfo.cs
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\obj\Debug\net8.0\AILogBook.csproj.CoreCompileInputs.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\obj\Debug\net8.0\AILogBook.MvcApplicationPartsAssemblyInfo.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\obj\Debug\net8.0\AILogBook.RazorAssemblyInfo.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\obj\Debug\net8.0\AILogBook.RazorAssemblyInfo.cs
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\obj\Debug\net8.0\scopedcss\bundle\AILogBook.styles.css
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\obj\Debug\net8.0\scopedcss\projectbundle\AILogBook.bundle.scp.css
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\obj\Debug\net8.0\staticwebassets.build.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\obj\Debug\net8.0\staticwebassets.build.json.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\obj\Debug\net8.0\staticwebassets.development.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\obj\Debug\net8.0\AILogBook.csproj.Up2Date
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\obj\Debug\net8.0\AILogBook.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\obj\Debug\net8.0\refint\AILogBook.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\obj\Debug\net8.0\AILogBook.pdb
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\obj\Debug\net8.0\AILogBook.genruntimeconfig.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.1\AILogBook\obj\Debug\net8.0\ref\AILogBook.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\bin\Debug\net8.0\appsettings.Development.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\bin\Debug\net8.0\appsettings.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\bin\Debug\net8.0\AILogBook.staticwebassets.endpoints.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\bin\Debug\net8.0\AILogBook.staticwebassets.runtime.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\bin\Debug\net8.0\AILogBook.exe
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\bin\Debug\net8.0\AILogBook.deps.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\bin\Debug\net8.0\AILogBook.runtimeconfig.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\bin\Debug\net8.0\AILogBook.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\bin\Debug\net8.0\AILogBook.pdb
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\bin\Debug\net8.0\ClosedXML.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\bin\Debug\net8.0\ClosedXML.Parser.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\bin\Debug\net8.0\DocumentFormat.OpenXml.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\bin\Debug\net8.0\DocumentFormat.OpenXml.Framework.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\bin\Debug\net8.0\ExcelNumberFormat.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\bin\Debug\net8.0\RBush.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\bin\Debug\net8.0\SixLabors.Fonts.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\bin\Debug\net8.0\System.IO.Packaging.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\obj\Debug\net8.0\AILogBook.csproj.AssemblyReference.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\obj\Debug\net8.0\AILogBook.GeneratedMSBuildEditorConfig.editorconfig
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\obj\Debug\net8.0\AILogBook.AssemblyInfoInputs.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\obj\Debug\net8.0\AILogBook.AssemblyInfo.cs
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\obj\Debug\net8.0\AILogBook.csproj.CoreCompileInputs.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\obj\Debug\net8.0\AILogBook.MvcApplicationPartsAssemblyInfo.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\obj\Debug\net8.0\AILogBook.RazorAssemblyInfo.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\obj\Debug\net8.0\AILogBook.RazorAssemblyInfo.cs
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\obj\Debug\net8.0\scopedcss\bundle\AILogBook.styles.css
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\obj\Debug\net8.0\scopedcss\projectbundle\AILogBook.bundle.scp.css
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\obj\Debug\net8.0\staticwebassets.build.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\obj\Debug\net8.0\staticwebassets.build.json.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\obj\Debug\net8.0\staticwebassets.development.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\obj\Debug\net8.0\AILogBook.csproj.Up2Date
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\obj\Debug\net8.0\AILogBook.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\obj\Debug\net8.0\refint\AILogBook.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\obj\Debug\net8.0\AILogBook.pdb
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\obj\Debug\net8.0\AILogBook.genruntimeconfig.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.2\AILogBook\obj\Debug\net8.0\ref\AILogBook.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\bin\Debug\net8.0\appsettings.Development.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\bin\Debug\net8.0\appsettings.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\bin\Debug\net8.0\AILogBook.staticwebassets.endpoints.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\bin\Debug\net8.0\AILogBook.staticwebassets.runtime.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\bin\Debug\net8.0\AILogBook.exe
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\bin\Debug\net8.0\AILogBook.deps.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\bin\Debug\net8.0\AILogBook.runtimeconfig.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\bin\Debug\net8.0\AILogBook.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\bin\Debug\net8.0\AILogBook.pdb
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\bin\Debug\net8.0\ClosedXML.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\bin\Debug\net8.0\ClosedXML.Parser.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\bin\Debug\net8.0\DocumentFormat.OpenXml.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\bin\Debug\net8.0\DocumentFormat.OpenXml.Framework.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\bin\Debug\net8.0\ExcelNumberFormat.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\bin\Debug\net8.0\RBush.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\bin\Debug\net8.0\SixLabors.Fonts.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\bin\Debug\net8.0\System.IO.Packaging.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\obj\Debug\net8.0\AILogBook.csproj.AssemblyReference.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\obj\Debug\net8.0\AILogBook.GeneratedMSBuildEditorConfig.editorconfig
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\obj\Debug\net8.0\AILogBook.AssemblyInfoInputs.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\obj\Debug\net8.0\AILogBook.AssemblyInfo.cs
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\obj\Debug\net8.0\AILogBook.csproj.CoreCompileInputs.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\obj\Debug\net8.0\AILogBook.MvcApplicationPartsAssemblyInfo.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\obj\Debug\net8.0\AILogBook.RazorAssemblyInfo.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\obj\Debug\net8.0\AILogBook.RazorAssemblyInfo.cs
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\obj\Debug\net8.0\scopedcss\bundle\AILogBook.styles.css
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\obj\Debug\net8.0\scopedcss\projectbundle\AILogBook.bundle.scp.css
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\obj\Debug\net8.0\staticwebassets.build.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\obj\Debug\net8.0\staticwebassets.build.json.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\obj\Debug\net8.0\staticwebassets.development.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\obj\Debug\net8.0\AILogBook.csproj.Up2Date
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\obj\Debug\net8.0\AILogBook.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\obj\Debug\net8.0\refint\AILogBook.dll
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\obj\Debug\net8.0\AILogBook.pdb
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\obj\Debug\net8.0\AILogBook.genruntimeconfig.cache
+D:\Pratik\Project 2022\AI Log Book\AILogBook V1.3\AILogBook\obj\Debug\net8.0\ref\AILogBook.dll
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\bin\Debug\net8.0\appsettings.Development.json
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\bin\Debug\net8.0\appsettings.json
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\bin\Debug\net8.0\AILogBook.staticwebassets.endpoints.json
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\bin\Debug\net8.0\AILogBook.staticwebassets.runtime.json
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\bin\Debug\net8.0\AILogBook.exe
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\bin\Debug\net8.0\AILogBook.deps.json
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\bin\Debug\net8.0\AILogBook.runtimeconfig.json
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\bin\Debug\net8.0\AILogBook.dll
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\bin\Debug\net8.0\AILogBook.pdb
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\bin\Debug\net8.0\ClosedXML.dll
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\bin\Debug\net8.0\ClosedXML.Parser.dll
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\bin\Debug\net8.0\DocumentFormat.OpenXml.dll
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\bin\Debug\net8.0\DocumentFormat.OpenXml.Framework.dll
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\bin\Debug\net8.0\ExcelNumberFormat.dll
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\bin\Debug\net8.0\RBush.dll
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\bin\Debug\net8.0\SixLabors.Fonts.dll
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\bin\Debug\net8.0\System.IO.Packaging.dll
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\obj\Debug\net8.0\AILogBook.csproj.AssemblyReference.cache
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\obj\Debug\net8.0\AILogBook.GeneratedMSBuildEditorConfig.editorconfig
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\obj\Debug\net8.0\AILogBook.AssemblyInfoInputs.cache
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\obj\Debug\net8.0\AILogBook.AssemblyInfo.cs
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\obj\Debug\net8.0\AILogBook.csproj.CoreCompileInputs.cache
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\obj\Debug\net8.0\AILogBook.MvcApplicationPartsAssemblyInfo.cache
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\obj\Debug\net8.0\AILogBook.RazorAssemblyInfo.cache
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\obj\Debug\net8.0\AILogBook.RazorAssemblyInfo.cs
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\obj\Debug\net8.0\scopedcss\bundle\AILogBook.styles.css
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\obj\Debug\net8.0\scopedcss\projectbundle\AILogBook.bundle.scp.css
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\obj\Debug\net8.0\staticwebassets.build.json
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\obj\Debug\net8.0\staticwebassets.build.json.cache
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\obj\Debug\net8.0\staticwebassets.development.json
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\obj\Debug\net8.0\AILogBook.csproj.Up2Date
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\obj\Debug\net8.0\AILogBook.dll
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\obj\Debug\net8.0\refint\AILogBook.dll
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\obj\Debug\net8.0\AILogBook.pdb
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\obj\Debug\net8.0\AILogBook.genruntimeconfig.cache
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\obj\Debug\net8.0\ref\AILogBook.dll
+D:\Pratik\Project 2022\AI Log Book\Old\AILogBook V1.5\AILogBook\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

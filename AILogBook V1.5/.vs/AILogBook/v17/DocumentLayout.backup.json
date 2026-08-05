@@ -1,0 +1,85 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Pratik\\Project 2022\\AI Log Book\\Old\\AILogBook V1.5\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B4A335C7-5F90-4C7B-91A3-6081C3D76C6D}|AILogBook\\AILogBook.csproj|d:\\pratik\\project 2022\\ai log book\\old\\ailogbook v1.5\\ailogbook\\controllers\\surveychatbotcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4A335C7-5F90-4C7B-91A3-6081C3D76C6D}|AILogBook\\AILogBook.csproj|solutionrelative:ailogbook\\controllers\\surveychatbotcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4A335C7-5F90-4C7B-91A3-6081C3D76C6D}|AILogBook\\AILogBook.csproj|d:\\pratik\\project 2022\\ai log book\\old\\ailogbook v1.5\\ailogbook\\controllers\\aichatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4A335C7-5F90-4C7B-91A3-6081C3D76C6D}|AILogBook\\AILogBook.csproj|solutionrelative:ailogbook\\controllers\\aichatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4A335C7-5F90-4C7B-91A3-6081C3D76C6D}|AILogBook\\AILogBook.csproj|d:\\pratik\\project 2022\\ai log book\\old\\ailogbook v1.5\\ailogbook\\models\\historydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4A335C7-5F90-4C7B-91A3-6081C3D76C6D}|AILogBook\\AILogBook.csproj|solutionrelative:ailogbook\\models\\historydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4A335C7-5F90-4C7B-91A3-6081C3D76C6D}|AILogBook\\AILogBook.csproj|d:\\pratik\\project 2022\\ai log book\\old\\ailogbook v1.5\\ailogbook\\models\\chatmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4A335C7-5F90-4C7B-91A3-6081C3D76C6D}|AILogBook\\AILogBook.csproj|solutionrelative:ailogbook\\models\\chatmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ChatMessage.cs",
+              "DocumentMoniker": "D:\\Pratik\\Project 2022\\AI Log Book\\Old\\AILogBook V1.5\\AILogBook\\Models\\ChatMessage.cs",
+              "RelativeDocumentMoniker": "AILogBook\\Models\\ChatMessage.cs",
+              "ToolTip": "D:\\Pratik\\Project 2022\\AI Log Book\\Old\\AILogBook V1.5\\AILogBook\\Models\\ChatMessage.cs",
+              "RelativeToolTip": "AILogBook\\Models\\ChatMessage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T12:01:51.143Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HistoryDto.cs",
+              "DocumentMoniker": "D:\\Pratik\\Project 2022\\AI Log Book\\Old\\AILogBook V1.5\\AILogBook\\Models\\HistoryDto.cs",
+              "RelativeDocumentMoniker": "AILogBook\\Models\\HistoryDto.cs",
+              "ToolTip": "D:\\Pratik\\Project 2022\\AI Log Book\\Old\\AILogBook V1.5\\AILogBook\\Models\\HistoryDto.cs",
+              "RelativeToolTip": "AILogBook\\Models\\HistoryDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T11:47:21.871Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SurveyChatBotController.cs",
+              "DocumentMoniker": "D:\\Pratik\\Project 2022\\AI Log Book\\Old\\AILogBook V1.5\\AILogBook\\Controllers\\SurveyChatBotController.cs",
+              "RelativeDocumentMoniker": "AILogBook\\Controllers\\SurveyChatBotController.cs",
+              "ToolTip": "D:\\Pratik\\Project 2022\\AI Log Book\\Old\\AILogBook V1.5\\AILogBook\\Controllers\\SurveyChatBotController.cs",
+              "RelativeToolTip": "AILogBook\\Controllers\\SurveyChatBotController.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAD4v2MAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T10:49:58.357Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AiChatController.cs",
+              "DocumentMoniker": "D:\\Pratik\\Project 2022\\AI Log Book\\Old\\AILogBook V1.5\\AILogBook\\Controllers\\AiChatController.cs",
+              "RelativeDocumentMoniker": "AILogBook\\Controllers\\AiChatController.cs",
+              "ToolTip": "D:\\Pratik\\Project 2022\\AI Log Book\\Old\\AILogBook V1.5\\AILogBook\\Controllers\\AiChatController.cs",
+              "RelativeToolTip": "AILogBook\\Controllers\\AiChatController.cs",
+              "ViewState": "AgIAACUBAAAAAAAAAAAvwGkBAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T09:19:41.917Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

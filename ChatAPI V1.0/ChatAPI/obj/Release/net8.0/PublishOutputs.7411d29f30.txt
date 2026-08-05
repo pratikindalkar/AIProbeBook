@@ -1,0 +1,12 @@
+D:\Pratik\Project 2022\ChatAPI\ChatAPI\obj\Release\net8.0\PubTmp\Out\ChatAPI.exe
+D:\Pratik\Project 2022\ChatAPI\ChatAPI\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
+D:\Pratik\Project 2022\ChatAPI\ChatAPI\obj\Release\net8.0\PubTmp\Out\appsettings.json
+D:\Pratik\Project 2022\ChatAPI\ChatAPI\obj\Release\net8.0\PubTmp\Out\ChatAPI.dll
+D:\Pratik\Project 2022\ChatAPI\ChatAPI\obj\Release\net8.0\PubTmp\Out\ChatAPI.deps.json
+D:\Pratik\Project 2022\ChatAPI\ChatAPI\obj\Release\net8.0\PubTmp\Out\ChatAPI.runtimeconfig.json
+D:\Pratik\Project 2022\ChatAPI\ChatAPI\obj\Release\net8.0\PubTmp\Out\ChatAPI.pdb
+D:\Pratik\Project 2022\ChatAPI\ChatAPI\obj\Release\net8.0\PubTmp\Out\Microsoft.OpenApi.dll
+D:\Pratik\Project 2022\ChatAPI\ChatAPI\obj\Release\net8.0\PubTmp\Out\Newtonsoft.Json.dll
+D:\Pratik\Project 2022\ChatAPI\ChatAPI\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+D:\Pratik\Project 2022\ChatAPI\ChatAPI\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Pratik\Project 2022\ChatAPI\ChatAPI\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll

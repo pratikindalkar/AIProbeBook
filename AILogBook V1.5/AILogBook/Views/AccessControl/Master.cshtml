@@ -1,0 +1,240 @@
+﻿@* 
+@{
+    ViewData["Title"] = "Access Control";
+}
+<head>
+    <link rel="stylesheet" href="~/css/AccessControlStyle.css" />
+</head>
+<div class="MainContent w-100 h-100">
+    <div class="sections w-100 h-100 d-flex">
+        @{
+            var data = ViewBag.Data as List<AILogBook.Models.AccessConrolDto>;
+        }
+        <form asp-action="User_Access" id="accessForm" method="post" class="right p-2 d-flex align-items-center justify-content-center flex-column">
+            <table class="table table-bordered text-center align-middle">
+                <thead class="table-dark">
+
+                    <tr>
+                        <th>Module</th>
+                        <th>Type</th>
+                        <th>Add</th>
+                        <th>Edit</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @if (data != null)
+                    {
+                        @for (int i = 0; i < data.Count; i++)
+                        {
+                            <tr>
+                                <td>
+                                    <b>@data[i].Section</b>
+                                    <input type="hidden" name="data[@i].Section" value="@data[i].Section" />
+                                </td>
+
+                                <td>
+                                    <b>@data[i].Type</b>
+                                    <input type="hidden" name="data[@i].Type" value="@data[i].Type" />
+                                </td>
+
+                                <td>
+                                    <input type="checkbox" name="data[@i].Add" value="true" @(data[i].Add ? "checked" : "") />
+                                    <input type="hidden" name="data[@i].Add" value="false" />
+                                </td>
+
+                                <td>
+                                    <input type="checkbox" name="data[@i].Edit" value="true" @(data[i].Edit ? "checked" : "") />
+                                    <input type="hidden" name="data[@i].Edit" value="false" />
+                                </td>
+
+                                <td>
+                                    <input type="checkbox" name="data[@i].Update" value="true" @(data[i].Update ? "checked" : "") />
+                                    <input type="hidden" name="data[@i].Update" value="false" />
+                                </td>
+
+                                <td>
+                                    <input type="checkbox" name="data[@i].Delete" value="true" @(data[i].Delete ? "checked" : "") />
+                                    <input type="hidden" name="data[@i].Delete" value="false" />
+                                </td>
+                            </tr>
+                        }
+                    }
+                    @{
+                                        else
+                        {
+                            <tr>
+                                <td colspan="7" style="text-align: center; font-size:26px;"><b>Table is empty</b></td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+            <div class="text-center mt-3">
+                <button type="button" id="saveBtn" class="btn btn-success px-4">
+                    Save All
+                </button>
+            </div>
+        </form>
+    </div>
+    @*     </div>
+</div>
+<script>
+    var successMsg = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(TempData["SuccessMsg"]));
+    var errorMsg = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(TempData["ErrorMsg"]));
+
+    if (successMsg) {
+        Swal.fire({
+            icon: 'success',
+            title: successMsg,
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true
+        });
+    }
+
+    if (errorMsg) {
+        Swal.fire({
+            icon: 'error',
+            title: errorMsg,
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true
+        });
+    }
+    document.getElementById("saveBtn").addEventListener("click", function (e) {
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "Do you want to save all changes?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#198754",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, Save it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById("accessForm").submit();
+            }
+        });
+
+    });
+</script> *@
+@using AILogBook.Models
+@{
+    ViewData["Title"] = "Access Control";
+    var data = ViewBag.Data as List<AccessConrolDto>;
+}
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="~/css/AccessControlStyle.css" />
+</head>
+
+<div class="MainContent w-100 h-100">
+
+    <div class="sections w-100 h-100 d-flex">
+        <form asp-action="User_Access" id="accessForm" method="post" class="right p-2 d-flex align-items-center justify-content-center flex-column w-100">
+            <table class="table table-bordered text-center align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Module</th>
+                        <th>Type</th>
+                        <th>Add</th>
+                        <th>Edit</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (data != null && data.Count > 0)
+                    {
+                        @for (int i = 0; i < data.Count; i++)
+                        {
+                            <tr>
+                                <td>
+                                    <b>@data[i].Section</b>
+                                    <input type="hidden" name="data[@i].Section" value="@data[i].Section" />
+                                </td>
+                                <td>
+                                    <b>@data[i].Type</b>
+                                    <input type="hidden" name="data[@i].Type" value="@data[i].Type" />
+                                </td>
+                                <td>
+                                    @* Use a single checkbox with value="true" and a hidden field for "false" to handle Boolean binding *@
+                                    <input type="checkbox" name="data[@i].Add" value="true" @(data[i].Add ? "checked" : "") />
+                                    <input type="hidden" name="data[@i].Add" value="false" />
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="data[@i].Edit" value="true" @(data[i].Edit ? "checked" : "") />
+                                    <input type="hidden" name="data[@i].Edit" value="false" />
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="data[@i].Update" value="true" @(data[i].Update ? "checked" : "") />
+                                    <input type="hidden" name="data[@i].Update" value="false" />
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="data[@i].Delete" value="true" @(data[i].Delete ? "checked" : "") />
+                                    <input type="hidden" name="data[@i].Delete" value="false" />
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="6" style="text-align: center; font-size:20px; padding: 20px;">
+                                <b>No modules found in the database.</b>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <div class="text-center mt-3">
+                <button type="button" id="saveBtn" class="btn btn-success px-5 py-2">
+                    Save All Changes
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Handle TempData messages from Controller
+    const successMsg = @Html.Raw(Json.Serialize(TempData["SuccessMsg"]));
+    const errorMsg = @Html.Raw(Json.Serialize(TempData["ErrorMsg"]));
+
+    if (successMsg) {
+        Swal.fire({ icon: 'success', title: successMsg, showConfirmButton: false, timer: 2500 });
+    }
+    if (errorMsg) {
+        Swal.fire({ icon: 'error', title: errorMsg });
+    }
+
+    // Attach event listener after DOM loads
+    document.addEventListener("DOMContentLoaded", function () {
+        const btn = document.getElementById("saveBtn");
+        const form = document.getElementById("accessForm");
+
+        if (btn) {
+            btn.addEventListener("click", function (e) {
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "This will update access permissions for this user.",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#198754",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, Save it!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        form.submit();
+                    }
+                });
+            });
+        }
+    });
+</script>
