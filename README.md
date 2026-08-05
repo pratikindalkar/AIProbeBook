@@ -10,7 +10,7 @@ AI Probe Book is a management platform for creating, monitoring, and controlling
 
 Manage AI models, categories, attributes, and automated prompt configurations:
 
-![Main Dashboard](./docs/images/main_dashboard.png)
+![Main Dashboard](https://github.com/pratikindalkar/AIProbeBook/blob/main/main_dashboard.png)
 
 ---
 
@@ -18,7 +18,7 @@ Manage AI models, categories, attributes, and automated prompt configurations:
 
 The customized chat window used by respondents during survey sessions:
 
-![Chat Interface](./docs/images/chat_interface.png)
+![Chat Interface](https://github.com/pratikindalkar/AIProbeBook/blob/main/chat_interface.png)
 
 ---
 
